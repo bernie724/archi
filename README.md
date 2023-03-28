@@ -3,7 +3,7 @@
 A personal set of scripts to automate the installation of Arch Linux as a Desktop system. 
 I am moving away from distro package manangers and using flatpak more.
 Arch seemed to be a good fit for that.
-I have nothing to do with Arch Linux of flatpak for that matter, this is for my personal use.
+I have nothing to do with Arch Linux or flatpak for that matter, this is for my personal use.
 
 Make sure to read: https://wiki.archlinux.org/title/installation_guide 
 
@@ -34,7 +34,7 @@ My goal is to have a clean, snappy (pun) Arch desktop system that is light on co
 
 -BT [3/28/2023] 
 
-### Finished Desktop!
+### Finished Desktop [xfce4]
 ![archi4done](https://user-images.githubusercontent.com/20193396/228312917-9b11c109-bc28-46ba-a7ae-df6fad56bbe2.png)
 #### Stats
 |Resource     | Stat | Desc                |
