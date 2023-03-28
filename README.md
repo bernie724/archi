@@ -2,7 +2,7 @@
 ### Purpose
 A personal set of scripts to automate (very little interaction) the installation of Arch Linux as a Desktop System *archi*. 
 
-I am moving systems away from distro package managers (as much as I can) to be more nimble as an operator, in so creating clean modular deployments, and maintaining such systems with an intelligent administrative experience (IAE). I rely heavily on flatpak (seems to be a thing) for this deployment.  Arch seemed to be a good fit for the type of experince I am looking for.
+I am moving systems away from distro package managers (as much as I can) to be more nimble as an operator, in so creating clean modular deployments, and maintaining such systems with an intelligent administrative experience (IAE). I rely heavily on flatpak (seems to be a thing) for this deployment.
 
 I have nothing to do with Arch Linux or flatpak for that matter, this is for my personal use.
 
@@ -10,7 +10,7 @@ Make sure to read: https://wiki.archlinux.org/title/installation_guide
 
 These scripts will **blowup** your system or virual machine. 
 **Only use these scripts for testing and fun!!!**
-```bash
+```bash### Arch Done!
 #Boot the Arch Linux Install iso [on a VM is recommended] 
 #partitions sda1 sda2 sda3 as in the doc [there is a script for this, sort of...]
 #These scripts should be a tarball somewhere local say /tmp/archi.tgz  
@@ -35,6 +35,9 @@ My goal is to have a clean, snappy (pun) Arch desktop system that is light on co
 
 -BT [3/28/2023] 
 
+
+#### arch3main.sh (at this stage Arch is done and usable, we use our user and flatpak from now on)
+![archi3](https://user-images.githubusercontent.com/20193396/228330349-5bae6635-d77d-4050-a26b-e4db4d431291.png)
 ### Finished Desktop [xfce4]
 ![archi4done](https://user-images.githubusercontent.com/20193396/228312917-9b11c109-bc28-46ba-a7ae-df6fad56bbe2.png)
 #### Stats
