@@ -51,4 +51,4 @@ Any feedback, fixes, improvements, whatnot would be nice.
 -BT [3/28/2023] 
 
 
-ps there is the SuperDeluxDiskMangler.sh for the brave or crazy that [tries] setups the /dev/sda 
+ps there is the SuperDeluxDiskMangler.sh for the brave or crazy that [tries] sets up the /dev/sda 
