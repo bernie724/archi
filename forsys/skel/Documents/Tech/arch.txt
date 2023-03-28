@@ -1,0 +1,20 @@
+3.2 Avoid certain pacman commands
+Avoid doing partial upgrades. In other words, never run pacman -Sy; instead, always use pacman -Syu.
+
+3.3
+Arch Linux is a rolling release distribution. That means when new library versions are pushed to the repositories, the developers and Trusted Users rebuild all the packages in the repositories that need to be rebuilt against the libraries. For example, if two packages depend on the same library, upgrading only one package might also upgrade the library (as a dependency), which might then break the other package which depends on an older version of the library.
+
+That is why partial upgrades are not supported. Do not use:
+
+pacman -Sy package
+pacman -Sy followed by pacman -S package (Note the absence of -Su in the installation of the package.)
+pacman -Syuw (Note that pacman -Syuw does imply the same risks like pacman -Sy, as it will update the pacman sync database without installing the newer packages.)
+
+Check for orphans and dropped packages
+After upgrading you may now have packages that are no longer needed or that are no longer in the official repositories.
+
+Use pacman -Qtd to check for packages that were installed as a dependency but now, no other packages depend on them. If an orphaned package is still needed, it is recommended to change the installation reason to explicit. Otherwise, if the package is no longer needed, it can be removed.
+--BT
+Some packages listed for this are not 'orphan' but optional.
+--
+
