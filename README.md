@@ -25,19 +25,9 @@ cd archi
 2. arch1core.sh #this is after arch-chroot, bootloader/pacman core 
 3. arch2main.sh #this is after reboot, user installed main/desktop/flatpak  
 
-follow the end dialog for the next step... 
-
-My goal is to have a clean, snappy (pun) Arch desktop that is light on core 
-
-and uses flatpak when available and sane. 
-
-I like to look forward and find the nice things that are happening in tech. 
-
-For my desktop I like futuristic not modern, what ever happened to beryl.. (-: 
-
-If you use, test or try these scripts.  Thank You. 
-
-Any feedback, fixes, improvements, whatnot would be nice. 
+follow the end dialog *of each script* for the next steps... 
+#### Goal
+My goal is to have a clean, snappy (pun) Arch desktop system that is light on core and uses flatpak when available and sane. I like to look forward and find the nice things that are happening in tech. For my desktop I like futuristic not modern, what ever happened to beryl.. (-: If you use, test or try these scripts.  Thank You. Any feedback, fixes, improvements, whatnot would be nice. 
 
 -BT [3/28/2023] 
 
