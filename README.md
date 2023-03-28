@@ -15,7 +15,7 @@ These scripts should be a tarball somewhere [archi.tgz]
 
 scp to ~/ [/root] after you boot Arch install iso. 
 
-e.g. scp username@10.0.0.1:/tmp/archi.tgz 
+e.g. scp username@10.0.0.1:/tmp/archi.tgz .
 
 Make sure your harddrive is setup as 3 partitions sda1 sda2 sda3 
 
