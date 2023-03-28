@@ -8,8 +8,7 @@ I have nothing to do with Arch Linux of flatpak for that matter, this is for my 
 Make sure to read: https://wiki.archlinux.org/title/installation_guide 
 
 These scripts will **blowup** your system or virual machine. 
-
-**Only use these scripts for testing and fun!!!** 
+**Only use these scripts for testing and fun!!!**
 ```bash
 #Boot the Arch Linux Install iso [on a VM is recommended] 
 #partitions sda1 sda2 sda3 as in the doc [there is a script for this, sort of...]
@@ -20,6 +19,8 @@ tar xzpf archi.tgz
 cd archi
 ./arch0base.sh
 ```
+![archi1](https://user-images.githubusercontent.com/20193396/228312615-645f7cac-6743-4942-aad7-964aef24875e.png)
+
 The install goes in 3 stages: 
 |Stage | Script | Info                                                             |
 | ---- | ------ | -----------                                                      |
@@ -33,5 +34,14 @@ My goal is to have a clean, snappy (pun) Arch desktop system that is light on co
 
 -BT [3/28/2023] 
 
+### Finished Desktop!
+![archi4done](https://user-images.githubusercontent.com/20193396/228312917-9b11c109-bc28-46ba-a7ae-df6fad56bbe2.png)
+#### Stats
+|Resource     | Stat | Desc                |
+| ----        | ---- | ----------------    |
+| Mem         | 586MB| Idle desktop        |
+| /           | 5.9G | After full install  |
+| flatpak     | 10G  | 33 apps installed   |
+| pacman      | #pkg | 56 (149 with deps)  |
 
-ps SuperDeluxDiskMangler.sh is for the brave or crazy that [tries] sets up the /dev/sda 
+
