@@ -43,7 +43,7 @@ My goal is to have a clean, snappy (pun) Arch desktop system that is light on co
 | ----        | ---- | ----------------    |
 | Mem         | 586MB| Idle desktop        |
 | /           | 5.9G | After full install  |
-| flatpak     | 10G  | 33 apps installed   |
+| flatpak     | 10G  | 33 (47 with deps)   |
 | pacman      | #pkg | 56 (149 with deps)  |
 
 
