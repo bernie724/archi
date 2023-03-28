@@ -36,15 +36,15 @@ My goal is to have a clean, snappy (pun) Arch desktop system that is light on co
 
 -BT [3/28/2023]
 
-### Finished Desktop [xfce4]
+### Finished Desktop
 ![archi4done](https://user-images.githubusercontent.com/20193396/228312917-9b11c109-bc28-46ba-a7ae-df6fad56bbe2.png)
 #### Stats
-|Resource     | Stat | Desc                |
-| ----        | ---- | ----------------    |
-| Mem         | 586MB| Idle desktop        |
-| /           | 5.9G | After full install  |
-| flatpak     | 10G  | 33 (47 with deps)   |
-| pacman      | #pkg | 56 (149 with deps)  |
+|Resource     | Stat | Desc                         |
+| ----        | ---- | ----------------             |
+| Mem         | 586MB| Idle Desktop [xfce4]         |
+| /           | 5.9G | Full install                 |
+| flatpak     | 10G  | 33 apps     (47 with deps)   |
+| pacman      | -    | 56 installs (149 with deps)  |
 
 
 |Script     | Start | Finish | Total  |
