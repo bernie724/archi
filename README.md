@@ -20,10 +20,12 @@ tar xzpf archi.tgz
 cd archi
 ./arch0base.sh
 ```
-#### The install goes in 3 stages 
-1. arch0base.sh #this is format/base/sanity 
-2. arch1core.sh #this is after arch-chroot, bootloader/pacman core 
-3. arch2main.sh #this is after reboot, user installed main/desktop/flatpak  
+The install goes in 3 stages: 
+|Stage | Script | Info                                                             |
+| ---- | ------ | -----------                                                      |
+| 1    | arch0base.sh | this is format/base/sanity                                 |
+| 2    | arch1core.sh | this is after arch-chroot, bootloader/pacman core          |
+| 3    | arch2main.sh | this is after reboot, user installed main/desktop/flatpak  |
 
 follow the end dialog *of each script* for the next steps... 
 #### Goal
