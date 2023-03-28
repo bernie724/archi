@@ -15,13 +15,13 @@ These scripts will **blowup** your system or virual machine.
 
 Start: Boot the Arch Linux iso [VM recommended] 
 
-These scripts should be a tarball somewhere [archi.tgz]  
+Make sure your harddrive is setup as 3 partitions sda1 sda2 sda3 
 
-scp to ~/ [/root] after you boot Arch install iso. 
+These scripts should be a tarball somewhere local say /tmp/archi.tgz  
+
+scp to them to the install iso ~/ 
 
 e.g. scp username@10.0.0.1:/tmp/archi.tgz .
-
-Make sure your harddrive is setup as 3 partitions sda1 sda2 sda3 
 
 [then] tar xf archi.tgz; cd archi 
 
@@ -39,7 +39,6 @@ To start run
 
 follow the end dialog for the next step... 
 
- 
 My goal is to have a clean, snappy (pun) Arch desktop that is light on core 
 
 and uses flatpak when available and sane. 
