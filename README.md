@@ -34,11 +34,8 @@ follow the end dialog *of each script* for the next steps...
 #### Goal
 My goal is to have a clean, snappy (pun) Arch desktop system that is light on core and uses flatpak when available and sane. I like to look forward and find the nice things that are happening in tech. For my desktop I like futuristic not modern, what ever happened to beryl.. (-: If you use, test or try these scripts.  Thank You. Any feedback, fixes, improvements, whatnot would be nice. 
 
--BT [3/28/2023] 
+-BT [3/28/2023]
 
-
-#### arch3main.sh (at this stage Arch is done and usable, we use our user and flatpak from now on)
-![archi3](https://user-images.githubusercontent.com/20193396/228330349-5bae6635-d77d-4050-a26b-e4db4d431291.png)
 ### Finished Desktop [xfce4]
 ![archi4done](https://user-images.githubusercontent.com/20193396/228312917-9b11c109-bc28-46ba-a7ae-df6fad56bbe2.png)
 #### Stats
@@ -50,15 +47,13 @@ My goal is to have a clean, snappy (pun) Arch desktop system that is light on co
 | pacman      | #pkg | 56 (149 with deps)  |
 
 
-|Script     | Start | Finish |
-| ---       | ----  | ---    |
-| arch0base | 11:42 | 11:44  |
-| arch1core | 11:45 | 11:54  |
-| arch2main | 11:56 | 12:08  |
-|Finish: 23m
+|Script     | Start | Finish | Total  |
+| ---       | ----  | ---    | -----  |
+| arch0base | 11:42 | 11:44  |  2 min |
+| arch1core | 11:45 | 11:54  |  9 min |
+| arch2main | 11:56 | 12:08  | 12 min |
 
-
-|Host  | Info                                                           | 
-| ---  | -----------------------                                        |
-|Linux | (Ubuntu 11.3.0-1ubuntu1~22.04) [kernel:5.19.0-35-generic]      |
-|      | CPU [Sky Lake]: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz*     |
+|VM Host | Info                                                           | 
+| ---    | -----------------------                                        |
+|Linux   | (Ubuntu 11.3.0-1ubuntu1~22.04) [kernel:5.19.0-35-generic]      |
+|Intel   | CPU [Sky Lake]: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz*     |
