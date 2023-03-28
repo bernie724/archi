@@ -4,7 +4,6 @@
 *.exe
 *.msi
 *.zip
-*.tgz
 *.log
 *.log.*
 *.sig
