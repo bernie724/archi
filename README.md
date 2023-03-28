@@ -15,7 +15,7 @@ These scripts will **blowup** your system or virual machine.
 
 Start: Boot the Arch Linux iso [VM recommended] 
 
-Make sure your harddrive is setup as 3 partitions sda1 sda2 sda3 
+Make sure your harddrive is setup as 3 partitions sda1 sda2 sda3 [there is a script for this, sort of...]
 
 These scripts should be a tarball somewhere local say /tmp/archi.tgz  
 
@@ -54,4 +54,4 @@ Any feedback, fixes, improvements, whatnot would be nice.
 -BT [3/28/2023] 
 
 
-ps there is the SuperDeluxDiskMangler.sh for the brave or crazy that [tries] sets up the /dev/sda 
+ps SuperDeluxDiskMangler.sh is for the brave or crazy that [tries] sets up the /dev/sda 
