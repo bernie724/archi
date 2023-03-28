@@ -1,10 +1,8 @@
 # archi
+### Purpose
 A personal set of scripts to automate the installation of Arch Linux as a Desktop system. 
-
 I am moving away from distro package manangers and using flatpak more.
-
 Arch seemed to be a good fit for that.
-
 I have nothing to do with Arch Linux of flatpak for that matter, this is for my personal use.
 
 Make sure to read: https://wiki.archlinux.org/title/installation_guide 
@@ -12,30 +10,20 @@ Make sure to read: https://wiki.archlinux.org/title/installation_guide
 These scripts will **blowup** your system or virual machine. 
 
 **Only use these scripts for testing and fun!!!** 
-
-Start: Boot the Arch Linux iso [VM recommended] 
-
-Make sure your harddrive is setup as 3 partitions sda1 sda2 sda3 [there is a script for this, sort of...]
-
-These scripts should be a tarball somewhere local say /tmp/archi.tgz  
-
-scp to them to the install iso ~/ 
-
-e.g. scp username@10.0.0.1:/tmp/archi.tgz .
-
-[then] tar xf archi.tgz; cd archi 
-
-The install goes in 3 stages 
-
-stage 1: arch0base.sh #this is format/base/sanity 
-
-stage 2: arch1core.sh #this is after arch-chroot, bootloader/pacman core 
-
-stage 3: arch2main.sh #this is after reboot, user installed main/desktop/flatpak  
-
-To start run 
-
-./arch0base.sh 
+```bash
+#Boot the Arch Linux Install iso [on a VM is recommended] 
+#partitions sda1 sda2 sda3 as in the doc [there is a script for this, sort of...]
+#These scripts should be a tarball somewhere local say /tmp/archi.tgz  
+#scp to them to the install iso ~/ 
+scp username@10.0.0.1:/tmp/archi.tgz .
+tar xf archi.tgz 
+cd archi
+./arch0base.sh
+```
+#### The install goes in 3 stages 
+1. arch0base.sh #this is format/base/sanity 
+2. arch1core.sh #this is after arch-chroot, bootloader/pacman core 
+3. arch2main.sh #this is after reboot, user installed main/desktop/flatpak  
 
 follow the end dialog for the next step... 
 
