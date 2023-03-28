@@ -16,7 +16,7 @@ These scripts will **blowup** your system or virual machine.
 #These scripts should be a tarball somewhere local say /tmp/archi.tgz  
 #scp to them to the install iso ~/ 
 scp username@10.0.0.1:/tmp/archi.tgz .
-tar xf archi.tgz 
+tar xzpf archi.tgz 
 cd archi
 ./arch0base.sh
 ```
