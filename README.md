@@ -1,7 +1,9 @@
 # archi
-A set of scripts to automate the installation of Arch Linux as a desktop system. 
+A personal set of scripts to automate the installation of Arch Linux as a desktop system. 
 
-make sure to read: https://wiki.archlinux.org/title/installation_guide 
+I have nothing to do with Arch Linux, this is for my personal use.
+
+Make sure to read: https://wiki.archlinux.org/title/installation_guide 
 
 These are for my personal testing and use, as I am moving my desktop to Arch. 
 
