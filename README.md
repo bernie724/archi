@@ -1,7 +1,9 @@
 # archi
 ### Purpose
-A personal set of scripts to automate the installation of Arch Linux as a Desktop system. 
-I am moving away from distro package managers (as much as I can) to be more nimble as an operator.  I am relying heavily on flatpak for future deployments.  Arch seemed to be a good fit for that.
+A personal set of scripts to automate (very little interaction) the installation of Arch Linux as a Desktop System *archi*. 
+
+I am moving systems away from distro package managers (as much as I can) to be more nimble as an operator, in so creating clean modular deployments, and maintaining such systems with an intelligent administrative experience (IAE). I rely heavily on flatpak (seems to be a thing) for this deployment.  Arch seemed to be a good fit for the type of experince I am looking for.
+
 I have nothing to do with Arch Linux or flatpak for that matter, this is for my personal use.
 
 Make sure to read: https://wiki.archlinux.org/title/installation_guide 
