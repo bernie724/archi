@@ -1,4 +1,5 @@
 #!/bin/bash
+#By: B. Thompson
 source archi.conf
 echo
 aline
