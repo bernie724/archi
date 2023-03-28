@@ -1,11 +1,9 @@
 # archi
 A personal set of scripts to automate the installation of Arch Linux as a desktop system. 
 
-I am moving my Desktop OS, I wrote these scripts to automate the testing of that,
+I am moving away from distro package manangers and using flatpak more.
 
-since I am use to debian and I wanted to move away from distro package manangers
-
-and use flatpak, Arch seemed to be a good fit for that.
+Arch seemed to be a good fit for that.
 
 I have nothing to do with Arch Linux, this is for my personal use.
 
