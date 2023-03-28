@@ -34,7 +34,7 @@ aline
 echo -n "Installing git..."
 (pacman -Sy --needed --color always --noconfirm --noprogressbar base-devel git > /dev/null 2>&1) && echo ".done!"
 ##change /etc/sudoers to include $USERNAME i.e. you
-echo "$auser ALL=NOPASSWD: ALL" >> /etc/sudoers
+echo "$auser ALL=NOPASSWD: ALL" >> /etc/sudoers ##this makes sure uid 1000 doesnt use a password for sudo
 ##Build bootloader## I have a long history of grub hating me, so I use limine for these tests.
 mkdir "$pdir"
 cd "$pdir" || exit 1
