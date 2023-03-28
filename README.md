@@ -57,3 +57,4 @@ My goal is to have a clean, snappy (pun) Arch desktop system that is light on co
 | ---    | -----------------------                                        |
 |Linux   | (Ubuntu 11.3.0-1ubuntu1~22.04) [kernel:5.19.0-35-generic]      |
 |Intel   | CPU [Sky Lake]: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz*     |
+|laptop  | 8 logical CPUs (3.80GHz) and 16GB of RAM                       |
