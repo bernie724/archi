@@ -25,7 +25,7 @@ cd archi
 
 The install goes in 3 stages: 
 |Stage | Script | Info                                                             |
-| ---- | ------ | -----------                                                      |
+| ---- | ------ | ----                                                             |
 | 1    | arch0base.sh | this is format/base/sanity                                 |
 | 2    | arch1core.sh | this is after arch-chroot, bootloader/pacman core          |
 | 3    | arch2main.sh | this is after reboot, user installed main/desktop/flatpak  |
@@ -50,3 +50,15 @@ My goal is to have a clean, snappy (pun) Arch desktop system that is light on co
 | pacman      | #pkg | 56 (149 with deps)  |
 
 
+|Script     | Start | Finish |
+| ---       | ----  | ---    |
+| arch0base | 11:42 | 11:44  |
+| arch1core | 11:45 | 11:54  |
+| arch2main | 11:56 | 12:08  |
+|Finish: 23m
+
+
+|Host  | Info                                                           | 
+| ---  | -----------------------                                        |
+|Linux | (Ubuntu 11.3.0-1ubuntu1~22.04) [kernel:5.19.0-35-generic]      |
+|      | CPU [Sky Lake]: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz*     |
