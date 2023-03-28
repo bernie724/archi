@@ -1,4 +1,5 @@
 #!/bin/bash
+##By: B. Thompson
 #for Intel:
 if [ $UID -eq 0 ]; then
 echo "DO NOT run as root!"
