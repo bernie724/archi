@@ -1,4 +1,5 @@
 #!/bin/bash
+##By: B. Thompson
 ##arch-chroot first
 #arch-chroot /mnt
 if [ $UID -ne 0 ]; then
