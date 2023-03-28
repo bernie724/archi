@@ -1,7 +1,6 @@
 #!/bin/bash
 ##By: B. Thompson
-##arch-chroot first
-#arch-chroot /mnt
+#within arch-chroot /mnt i.e. /mnt is / [root]
 if [ $UID -ne 0 ]; then
 echo "run as root!"
 exit 1
@@ -36,7 +35,7 @@ echo -n "Installing git..."
 (pacman -Sy --needed --color always --noconfirm --noprogressbar base-devel git > /dev/null 2>&1) && echo ".done!"
 ##change /etc/sudoers to include $USERNAME i.e. you
 echo "$auser ALL=NOPASSWD: ALL" >> /etc/sudoers
-##Build
+##Build bootloader## I have a long history of grub hating me, so I use limine for these tests.
 mkdir "$pdir"
 cd "$pdir" || exit 1
 echo -n "get $bapp boot/loader/strap..."
