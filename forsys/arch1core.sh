@@ -1,5 +1,5 @@
 #!/bin/bash
-##By: B. Thompson
+##B. Thompson
 #within arch-chroot /mnt i.e. /mnt is / [root]
 if [ $UID -ne 0 ]; then
 echo "run as root!"
