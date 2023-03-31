@@ -38,6 +38,7 @@ My goal is to have a clean, snappy (pun) Arch desktop system that is light on co
 
 ### Finished Desktop
 ![archi4done](https://user-images.githubusercontent.com/20193396/228312917-9b11c109-bc28-46ba-a7ae-df6fad56bbe2.png)
+![archich](https://user-images.githubusercontent.com/20193396/229041871-1faf3a14-4bf5-416c-a414-341b48ae33e5.png)
 #### Stats
 |Resource     | Stat | Desc                         |
 | ----        | ---- | ----------------             |
