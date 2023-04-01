@@ -8,11 +8,9 @@ I have nothing to do with Arch Linux or flatpak for that matter, this is for my 
 
 Make sure to read: https://wiki.archlinux.org/title/installation_guide 
 
-**WARNING:** Do not run these scripts anywhere but on a booted Arch Linux Install ISO.  These scripts will **oblitorate** any system with root access.
-
-**Only use these scripts for testing and fun!!!**
+**WARNING:** Do not run these scripts anywhere but on a booted Arch Linux Install ISO [VM is Only Recommended].  **These scripts will Obliterate any system with root access.**  These scripts are for testing and fun only!!!
 #### Pre Install
-Boot the latest Arch Linux Install ISO [on a VM is recommended] 
+Boot the latest Arch Linux Install ISO on the system that will do a **full and complete** install. [VirutualBox Guest is the only install tested] 
 
 Copy and unpack the archi.tgz file to the booted Arch Install ISO  
 ```sh
