@@ -53,11 +53,11 @@ cd /usr/local/archi; ./arch0install.sh
 | pacman      | -    | 56 installs (149 with deps)  |
 
 
-|Script     | Start | Finish | Total  |
-| ---       | ----  | ---    | -----  |
-| arch0base | 11:42 | 11:44  |  2 min |
-| arch1core | 11:45 | 11:54  |  9 min |
-| arch2main | 11:56 | 12:08  | 12 min |
+|Script        | Start | Finish | Total  |
+| ---          | ----  | ---    | -----  |
+| arch0base    | 11:42 | 11:44  |  2 min |
+| arch0install | 11:44 | 12:05  | 21 min |
+
 
 |VM Host | Info                                                           | 
 | ---    | -----------------------                                        |
