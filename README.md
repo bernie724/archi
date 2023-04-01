@@ -8,32 +8,38 @@ I have nothing to do with Arch Linux or flatpak for that matter, this is for my 
 
 Make sure to read: https://wiki.archlinux.org/title/installation_guide 
 
-**WARNING:** Do not run these scripts anywhere but on a booted Arch Linux Install ISO.  These scripts can *oblitorate* any system with root access.
+**WARNING:** Do not run these scripts anywhere but on a booted Arch Linux Install ISO.  These scripts will **oblitorate** any system with root access.
 
 **Only use these scripts for testing and fun!!!**
-```bash### Arch Done!
-#Boot the Arch Linux Install iso [on a VM is recommended] 
-#partitions sda1 sda2 sda3 as in the doc [there is a script for this, sort of...]
-#These scripts should be a tarball somewhere local say /tmp/archi.tgz  
-#scp to them to the install iso ~/ 
-scp username@10.0.0.1:/tmp/archi.tgz .
-#tar xzpf archi.tgz # for gzip
-tar xpjf archi.bz2  # for bz2 comp
-cd archi
-./arch0base.sh
-```
-![archi1](https://user-images.githubusercontent.com/20193396/228312615-645f7cac-6743-4942-aad7-964aef24875e.png)
+#### Pre Install
+Boot the latest Arch Linux Install ISO [on a VM is recommended] 
 
-The install goes in 2 Step with no interaction: 
-|Stage | Script | Info                                                             |
+Copy and unpack the archi.tgz file to the booted Arch Install ISO  
+```sh
+scp username@10.0.0.1:/tmp/archi.tgz .
+tar xzpf archi.tgz # for gzip
+```
+#### Configuring the scripts (optional)
+I would leave the settings for the first run, these scripts dont have a lot of checks yet, the config file is archi/archi.conf and The install sets are located @ archi/forsys/sets 
+
+e.g. vim archi.conf to suit your install. default: user archi pass archi
+
+#### Install Overview
+The install is **two commands** with **NO** interaction:
+
+|Step  | Script | Info                                                             |
 | ---- | ------ | ----                                                             |
 | 1    | arch0base.sh    | this is format/base/sanity and to chroot                |
 | 2    | arch0install.sh | this is after arch-chroot, bootloader/desktop/apps      |
 
-#### Goal
-Move away from all distro package managers on all Desktop (GUI) systems.   The final system will be a clean, snappy (pun) Arch desktop that is managable, safe and fun. For my desktop I like futuristic not modern, what ever happened to beryl.. (-: If you use, test or try these scripts.  Thank You. Any feedback, fixes, improvements, whatnot would be nice. 
-
--BT [3/28/2023]
+#### Start Install
+```sh
+#To start run from the unpacked archi.tgz archi/ directory
+cd archi/; ./arch0base.sh
+#The dialog at the end gives instructions to start the second script.
+cd /usr/local/archi; ./arch0install.sh 
+```
+##### When complete, the total system is installed, with all included flatpaks and a Desktop GUI (xfce4)
 
 ### Finished Desktop
 ![archiComplete](https://user-images.githubusercontent.com/20193396/229312252-cf00e46d-e456-4ba9-ada8-c11ac1826290.png)
@@ -60,5 +66,16 @@ Move away from all distro package managers on all Desktop (GUI) systems.   The f
 |Linux   | (Ubuntu 11.3.0-1ubuntu1~22.04) [kernel:5.19.0-35-generic]      |
 |Intel   | CPU [Sky Lake]: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz*     |
 |laptop  | 8 logical CPUs (3.80GHz) and 16GB of RAM                       |
+
+#### Conclusion
+
+With these scripts I can move away from all distro package managers on all Desktop (GUI) systems I create.   
+This script creates a clean, snappy (pun) Arch desktop that is manageable, safe and fun. 
+My basic desktop requirements are, a granite like stability at the core and futuristic application availability in the operator space.
+What ever happened to beryl.. (-:
+
+If you use, test or try these scripts '**Thank You**'. Any feedback, fixes, improvements, whatnot would be nice. 
+
+-BT [3/28/2023]
 
 *archi comes from a.r.c.h.i.(e) from the tabletop rpg game Rifts 'Artificial Robot Cerebellum Housing Intellect (Experiment)'*
