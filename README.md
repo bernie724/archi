@@ -42,7 +42,7 @@ cd /usr/local/archi; ./arch0install.sh
 ### Finished Desktop
 ![archiComplete](https://user-images.githubusercontent.com/20193396/229312252-cf00e46d-e456-4ba9-ada8-c11ac1826290.png)
 ![archiOpen](https://user-images.githubusercontent.com/20193396/229312258-fdd0f36c-873a-4eca-922b-9f1a25629af1.png)
-![archiComplete](https://user-images.githubusercontent.com/20193396/229312261-09e96a70-8077-47c6-8d31-bddf06c284eb.png)
+![archiMinimized](https://user-images.githubusercontent.com/20193396/229314436-9343d304-1261-4e01-8cd6-261193597ff4.png)
 
 #### Stats
 |Resource     | Stat | Desc                         |
