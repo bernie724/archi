@@ -1,8 +1,8 @@
 # archi
 ### Purpose
-A personal set of scripts to fully automate (no interaction) the installation of Arch Linux as a complete Desktop System. 
+A personal set of scripts to fully automate (no interaction, 1 command to install by default) the installation of Arch Linux as a complete Desktop System. 
 
-I am moving systems away from distro package managers (as much as I can) to be more nimble as an operator, in so creating clean modular deployments, and maintaining such systems with an intelligent administrative experience. I rely heavily on flatpak for this deployment.
+I am moving systems away from distro package managers (as much as I can) to be more nimble as an operator, in so creating clean modular deployments, and maintaining such systems with intelligent administrative values. This install is a modern Arch foundation and a flatpak apps environment for the usage experience. 
 
 I have nothing to do with Arch Linux or flatpak for that matter, this is for my personal use.
 
@@ -11,6 +11,8 @@ Make sure to read: https://wiki.archlinux.org/title/installation_guide
 **WARNING:** Do not run these scripts anywhere but on a booted Arch Linux Install ISO [VM is Only Recommended].  **These scripts will Obliterate any system with root access.**  These scripts are for testing and fun only!!!
 #### Pre Install
 Boot the latest Arch Linux Install ISO on the system that will do a **full and complete** install. [VirutualBox Guest is the only install tested] 
+
+Arch Download: https://archlinux.org/download/
 
 Copy and unpack the archi.tgz file to the booted Arch Install ISO  
 ```sh
