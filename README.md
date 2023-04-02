@@ -76,4 +76,4 @@ If you use, test or try these scripts '**Thank You**'. Any feedback, fixes, impr
 
 -BT [3/28/2023]
 
-*archi comes from a.r.c.h.i.(e) from the tabletop rpg game Rifts 'Artificial Robot Cerebellum Housing Intellect (Experiment)'*
+*archi is inspired from a.r.c.h.i.(e) from the tabletop rpg game Rifts 'Artificial Robot Cerebellum Housing Intellect (Experiment)'*
