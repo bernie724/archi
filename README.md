@@ -25,19 +25,17 @@ I would review and leave the settings for the first run, these scripts dont have
 e.g. vim/nano archi.conf to suit your install. default: user archi pass archi [the script will tell you]
 
 #### Install Overview
-The install is **two commands** with **NO** interaction:
+The install is **one commands** with **NO** interaction:
 
 |Step  | Script | Info                                                             |
 | ---- | ------ | ----                                                             |
-| 1    | arch0base.sh    | this is format/base/sanity and to chroot                |
+| 1    | arch0base.sh    | this is the install all command format/base/sanity      |
 | 2    | arch0install.sh | this is after arch-chroot, bootloader/desktop/apps      |
 
 #### Start Install
 ```sh
 #To start run from the unpacked archi.tgz archi/ directory
 cd archi/; ./arch0base.sh
-#The dialog at the end gives instructions to start the second script.
-cd /usr/local/archi; ./arch0install.sh 
 ```
 ##### When complete, the total system is installed, with all included flatpaks and a Desktop GUI (xfce4)
 
