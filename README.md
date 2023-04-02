@@ -18,9 +18,9 @@ scp username@10.0.0.1:/tmp/archi.tgz .
 tar xzpf archi.tgz # for gzip
 ```
 #### Configuring the scripts (optional)
-I would leave the settings for the first run, these scripts dont have a lot of checks yet, the config file is archi/archi.conf and The install sets are located @ archi/forsys/sets 
+I would review and leave the settings for the first run, these scripts dont have a lot of checks yet, the config file is archi/archi.conf and The install sets are located @ archi/forsys/sets 
 
-e.g. vim archi.conf to suit your install. default: user archi pass archi
+e.g. vim/nano archi.conf to suit your install. default: user archi pass archi [the script will tell you]
 
 #### Install Overview
 The install is **two commands** with **NO** interaction:
