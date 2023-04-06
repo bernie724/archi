@@ -37,8 +37,9 @@ The install is **one commands** with **NO** interaction:
 #To start run from the unpacked archi.tgz archi/ directory
 cd archi/; ./arch0base.sh
 ```
+##### Archi running...
+![archirunning2](https://user-images.githubusercontent.com/20193396/230499696-fa9bce5e-9502-4316-89c6-74bdc5ab6837.png)
 ##### When complete, the total system is installed, with all included flatpaks and a Desktop GUI (xfce4)
-
 ### Finished Desktop
 ![archiComplete](https://user-images.githubusercontent.com/20193396/229312252-cf00e46d-e456-4ba9-ada8-c11ac1826290.png)
 ![archiOpen](https://user-images.githubusercontent.com/20193396/229312258-fdd0f36c-873a-4eca-922b-9f1a25629af1.png)
