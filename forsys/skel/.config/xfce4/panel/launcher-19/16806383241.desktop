@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=OGreen
+GenericName=Terminal emulator
+Comment=kitty terminal
+TryExec=kitty
+Exec=kitty
+Icon=alienarena
+Categories=System;TerminalEmulator;
+X-XFCE-Source=file:///usr/share/applications/kitty.desktop
+Path=
+Terminal=false
+StartupNotify=false

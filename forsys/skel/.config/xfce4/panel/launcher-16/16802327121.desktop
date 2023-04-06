@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Books
+Comment=View eBooks
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=com.github.johnfactotum.Foliate --file-forwarding com.github.johnfactotum.Foliate @@u %U @@
+Icon=address-book-new
+Path=
+Terminal=false
+StartupNotify=false
+X-XFCE-Source=file:///home/bernie/Desktop/Books.desktop

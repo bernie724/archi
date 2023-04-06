@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=File Manager
+Comment=File system
+Exec=exo-open --launch FileManager %u
+Icon=xfce4_xicon
+Path=
+Terminal=false
+StartupNotify=true
+X-XFCE-Source=file:///home/archi/Desktop/File%20Manager.desktop

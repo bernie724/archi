@@ -1,0 +1,47 @@
+#!/bin/bash
+basehead () {
+aline
+echo "read: https://wiki.archlinux.org/title/installation_guide"
+aline
+echo "When these set of scripts are complete, this machine will" 
+echo "be a powerful Arch [$osn] system; ready for 2023."
+echo "Goal: A clean, quick, nimble and progressive desktop."
+echo "Reasonable package (pacman) use for base/core/modern operations,"
+echo "flatpak for userspace and desktop apps when avialable."
+}
+
+basefoot () {
+umount "$rmnt/$bmnt" || umount -f "$rmnt/$bmnt" || umount -l "$rmnt/$bmnt"
+umount "$rmnt" || umount -f "$rmnt" || umount -l "$rmnt"
+swapoff "$rdev$spar"
+if [ "$areboot" = "true" ]; then
+##sleep and spin
+x=0
+stime=15
+echo -n "Rebooting in $stime seconds. Enjoy! -bt "
+spin='-\|/'
+max=$(( $stime * 10 ))
+pd=' '
+while [ $x -le $max ]
+do
+  x=$(( $x + 1 ))
+if [ $x -le $max ]
+then
+ i=$(( (i+1) %4 ))
+  echo -ne "\b${spin:$i:1}"
+else
+echo -ne "\b$pd"
+fi
+sleep .10
+done
+reboot
+fi
+aline
+echo "$osn is Ready reboot! Enjoy -bt" 
+aline
+
+
+
+}
+
+

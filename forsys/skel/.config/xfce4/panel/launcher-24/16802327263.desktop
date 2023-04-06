@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Writer
+Comment=Text Editor
+Exec=/var/lib/flatpak/exports/bin/org.gnome.TextEditor
+Icon=add-subtitle
+Path=
+Terminal=false
+StartupNotify=false
+GenericName=Google Chrome
+X-XFCE-Source=file:///home/bernie/Desktop/Editor.desktop
