@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Radio
+Comment=Shortwave
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=shortwave de.haeckerfelix.Shortwave
+Icon=audio-radio
+Path=
+Terminal=false
+StartupNotify=true
+X-XFCE-Source=file:///home/bernie/Desktop/Radio.desktop

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Name=Terminal
+Comment=Xfce Terminal
+GenericName=Terminal Emulator
+Exec=xfce4-terminal
+Icon=package-available
+Terminal=false
+Type=Application
+Categories=GTK;System;TerminalEmulator;
+StartupNotify=false
+Actions=preferences;
+X-XFCE-Source=file:///usr/share/applications/xfce4-terminal.desktop
+
+Path=
+
+[Desktop Action preferences]
+Name=Terminal Preferences
+Exec=xfce4-terminal --preferences

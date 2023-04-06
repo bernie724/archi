@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Calculator
+Comment=Arithmetic
+Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=gnome-calculator org.gnome.Calculator
+Icon=view-time-schedule-calculus
+Path=
+Terminal=false
+StartupNotify=true
+X-XFCE-Source=file:///home/archi/Desktop/Calculator.desktop
