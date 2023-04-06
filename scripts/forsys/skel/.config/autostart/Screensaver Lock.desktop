@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Screensaver Lock
+Comment=Lock on start
+Exec=xfce4-screensaver-command --lock
+Icon=org.xfce.ScreenSaver
+Path=
+Terminal=true
+StartupNotify=false

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Settings
+Comment=System Settings
+Keywords=control;panel;center;system;settings;personalize;hardware;
+Exec=xfce4-settings-manager
+Icon=systemsettings
+Terminal=false
+Type=Application
+Categories=X-XFCE;Settings;DesktopSettings;
+OnlyShowIn=XFCE;
+X-XfceSettingsManagerHidden=true
+X-XFCE-Source=file:///usr/share/applications/xfce-settings-manager.desktop
+Path=
+StartupNotify=true

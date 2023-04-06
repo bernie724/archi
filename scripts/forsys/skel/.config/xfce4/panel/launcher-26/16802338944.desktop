@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Screenshot
+Comment=Take screenshots
+Icon=org.xfce.screenshooter
+Exec=xfce4-screenshooter
+Type=Application
+StartupNotify=true
+Terminal=false
+Categories=GTK;Utility;
+X-XFCE-Source=file:///home/bernie/Desktop/xfce4-screenshooter.desktop
+Path=

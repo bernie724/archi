@@ -1,0 +1,12 @@
+intel-ucode
+pacman-contrib
+networkmanager
+dhcpcd
+netctl
+openssh
+htop
+fortune-mod
+terminus-font
+vim
+tar
+flatpak
