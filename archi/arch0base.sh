@@ -79,7 +79,8 @@ fi
 #cp "$atool/archi.jpg" "$rmt/$bmnt"
 mv "$atool/litexfce.sh" "$rmnt/usr/local/bin/"
 mv "$atool/darkxfce.sh" "$rmnt/usr/local/bin/"
-mv "$atool/flatauto.sh" "$rmnt/usr/local/bin/"
+mv "$atool/flatiset.sh" "$rmnt/usr/local/bin/"
+mv "$atool/pacrset.sh" "$rmnt/usr/local/bin/"
 cp readme.txt "$rmnt/$idir/"
 if [ "$aauto" = "true" ]; then
 mv "$atool/profile.auto" "$atool/".profile
