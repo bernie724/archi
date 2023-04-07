@@ -16,7 +16,7 @@ Arch Download: https://archlinux.org/download/
 
 Copy and unpack the archi.tgz (above) to a booted Arch Install ISO and run arch0base.sh  
 ```sh
-scp username@10.0.0.1:/tmp/archi.tgz .
+scp username@10.0.0.1:~/archi/archi.tgz .
 tar xzpf archi.tgz
 cd archi/; ./arch0base.sh 
 #that's it, this will have a final warning and start the install
