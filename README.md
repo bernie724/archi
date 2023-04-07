@@ -32,7 +32,7 @@ The install is **one command** with **NO** interaction:
 
 |Step  | Script | Info                                                             |
 | ---- | ------ | ----                                                             |
-| 1    | arch0base.sh    | this is the install all command format/base/sanity      |
+| 1    | arch0base.sh    | this is starts the install, format/base/sanity          |
 | 2    | arch0install.sh | this is after arch-chroot, bootloader/desktop/apps      |
 
 ##### Archi running...
