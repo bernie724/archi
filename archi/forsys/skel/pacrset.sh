@@ -5,6 +5,7 @@ setdir=/usr/local/archi/sets
 if [ -f "$setdir/$1" ]; then
 setfile="$1"
 else
+echo "$0 REMOVES all the pacman packages from a list"
 echo "Usage: $0 [set]"
 ls "$setdir"
 exit 1
