@@ -34,6 +34,7 @@ The install is **one command** with **NO** interaction:
 | ---- | ------ | ----                                                             |
 | 1    | arch0base.sh    | this is the install command, format/base/sanity         |
 | 2    | arch0install.sh | this is after arch-chroot, bootloader/desktop/apps      |
+| conf | archi.conf      | use this file to customize an install                   |
 
 ##### Archi running...
 ![archirunning2](https://user-images.githubusercontent.com/20193396/230499696-fa9bce5e-9502-4316-89c6-74bdc5ab6837.png)
