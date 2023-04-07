@@ -2,7 +2,6 @@
 ##B.Thompson
 #Used to install a raw list of flatpak ids
 setdir=/usr/local/archi/sets
-#setfile=flistclean.set ##install set
 if [ -f "$setdir/$1" ]; then
 setfile="$1"
 else
