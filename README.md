@@ -9,34 +9,32 @@ I have nothing to do with Arch Linux or flatpak for that matter, this is for my 
 Make sure to read: https://wiki.archlinux.org/title/installation_guide 
 
 **WARNING:** Do not run these scripts anywhere but on a booted Arch Linux Install ISO [VM is Only Recommended].  **These scripts will Obliterate any system with root access.**  These scripts are for testing and fun only!!!
-#### Pre Install
+#### Install
 Boot the latest Arch Linux Install ISO on the system that will do a **full and complete** install. [VirutualBox Guest is the only install tested] 
 
 Arch Download: https://archlinux.org/download/
 
-Copy and unpack the archi.tgz file to the booted Arch Install ISO  
+Copy and unpack the archi.tgz (above) to a booted Arch Install ISO and run arch0base.sh  
 ```sh
 scp username@10.0.0.1:/tmp/archi.tgz .
-tar xzpf archi.tgz # for gzip
+tar xzpf archi.tgz
+cd archi/; ./arch0base.sh 
+#that's it, this will have a final warning and start the batch
 ```
+![simplescp](https://user-images.githubusercontent.com/20193396/230524685-c2e340a2-4596-49de-85f3-539b1a61c481.png)
 #### Configuring the scripts (optional)
 I would review and leave the settings for the first run, these scripts dont have a lot of checks yet, the config file is archi/archi.conf and The install sets are located @ archi/forsys/sets 
 
-e.g. vim/nano archi.conf to suit your install. default: user archi pass archi [the script will tell you]
+e.g. vim/nano archi.conf to tailor your install. default: user:[archi] pass:[archi]
 
 #### Install Overview
-The install is **one commands** with **NO** interaction:
+The install is **one command** with **NO** interaction:
 
 |Step  | Script | Info                                                             |
 | ---- | ------ | ----                                                             |
 | 1    | arch0base.sh    | this is the install all command format/base/sanity      |
 | 2    | arch0install.sh | this is after arch-chroot, bootloader/desktop/apps      |
 
-#### Start Install
-```sh
-#To start run from the unpacked archi.tgz archi/ directory
-cd archi/; ./arch0base.sh
-```
 ##### Archi running...
 ![archirunning2](https://user-images.githubusercontent.com/20193396/230499696-fa9bce5e-9502-4316-89c6-74bdc5ab6837.png)
 ##### When complete, the total system is installed, with all included flatpaks and a Desktop GUI (xfce4)
@@ -73,7 +71,7 @@ This script creates a clean, snappy (pun) Arch desktop that is manageable, safe 
 My basic desktop requirements are, a granite like stability at the core and futuristic application availability in the operator space.
 What ever happened to beryl.. (-:
 
-If you use, test or try these scripts '**Thank You**'. Any feedback, fixes, improvements, whatnot would be nice. 
+If you use, test or try these scripts '**Thank You**'. Any feedback, fixes, improvements, screenshots, whatnot would be nice. 
 
 -BT [3/28/2023]
 
