@@ -13,9 +13,9 @@ fi
 while read set; do
  if [ "$pverbose" = "true" ]; then
 echo -n "[$pnum] Installing $set..."
-((pacman -Sy --color always --noconfirm --noprogressbar "$set" > /dev/null 2>&1) && echo ".okay.") || echo ".failed!"
+((pacman -Sy --noconfirm --noprogressbar "$set" > /dev/null 2>&1) && echo ".okay.") || echo ".failed!"
  else
-((pacman -Sy --color always --noconfirm --noprogressbar "$set" > /dev/null 2>&1) && echo -n ".") || echo -n "!"
+((pacman -Sy --noconfirm --noprogressbar "$set" > /dev/null 2>&1) && echo -n ".") || echo -n "!"
  fi
 let pnum--
 done < "$plist"
@@ -28,7 +28,7 @@ fi
 iflats () {
 cd "$idir"
 echo -n "Install flatpak..."
-(pacman -Sy --color always --noconfirm --noprogressbar flatpak > /dev/null 2>&1) || echo ".Failed to install flatpak!" 
+(pacman -Sy --noconfirm --noprogressbar flatpak > /dev/null 2>&1) || echo ".Failed to install flatpak!" 
 echo ".okay."
 echo -n "Add flatpak repo [flathub]..."
 (flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo > /dev/null 2>&1) && echo ".okay."
@@ -73,10 +73,9 @@ pnum=$(cat "$rlist" | wc -l)
 echo "Removing $pnum packages..."
 while read set; do
 echo -n " Removing [$set."
-((pacman -Ry --color always --noconfirm --noprogressbar "$set" > /dev/null 2>&1) && echo -n ".okay] ") || echo -n ".failed!] "
+((pacman -R --noconfirm --noprogressbar "$set" > /dev/null 2>&1) && echo ".okay] ") || echo ".failed!] "
 let pnum--
 done < "$rlist"
-echo
 }
 
 

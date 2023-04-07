@@ -46,8 +46,8 @@ INTERFACE_RESOLUTION=1280x800
     CMDLINE=root=UUID='"$ruuid"' '"$lcmd"'
     MODULE_PATH=boot:///initramfs-linux.img' > "$idir/$alim"
 cp "$idir/$alim" "/$bmnt"
-cp /etc/skel/archi.jpg /boot
-rm /etc/skel/archi.jpg
+#cp /etc/skel/archi.jpg /boot
+#rm /etc/skel/archi.jpg
 echo ".okay."
 }
 

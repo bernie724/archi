@@ -11,6 +11,15 @@ echo "flatpak for userspace and desktop apps when avialable."
 }
 
 basefoot () {
+#set $auser admin and msg
+echo "$osn is done!."
+echo "Things to do:"
+echo "Use 'flatpak search <term>' to find more apps."
+echo "Change themes in xfce with: darkxfce.sh or litexfce.sh"
+aline
+echo "Boot housekeeping:"
+echo "Change your boot order OR remove the media OR hit [F12]"
+echo "OR select 'Boot existing OS' from the Arch ISO boot menu"
 umount "$rmnt/$bmnt" || umount -f "$rmnt/$bmnt" || umount -l "$rmnt/$bmnt"
 umount "$rmnt" || umount -f "$rmnt" || umount -l "$rmnt"
 swapoff "$rdev$spar"
@@ -37,11 +46,6 @@ done
 reboot
 fi
 aline
-echo "$osn is Ready reboot! Enjoy -bt" 
+echo "reboot & Enjoy! -bt" 
 aline
-
-
-
 }
-
-

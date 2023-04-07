@@ -50,24 +50,29 @@ imods
 prepboot
 iboot
 finboot
- aline
+aline
 ipacs
  if [ "$asplash" = "true" ]; then
  aline
  iplym
  fi
- aline
+aline
 iscreen
 idaemon
- aline
+aline
 regen
-repac
+ if [ "$pron" = "true" ]; then
+ aline
+ repac
+ fi
  if [ "$fpon" = "true" ]; then
  aline
  iflats
  fi
- aline
+aline
 reman
+aline
 icrypt
- aline
-afoot
+##finish admin area
+chown -R "$auser" "$aloc"
+chmod -x $0

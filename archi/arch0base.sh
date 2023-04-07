@@ -76,7 +76,7 @@ rm "$atool/mkinitcpio.conf.splash"
 fi
 
 ##arch-chroot prep
-cp "$atool/archi.jpg" "$rmt/$bmnt"
+#cp "$atool/archi.jpg" "$rmt/$bmnt"
 mv "$atool/litexfce.sh" "$rmnt/usr/local/bin/"
 mv "$atool/darkxfce.sh" "$rmnt/usr/local/bin/"
 mv "$atool/flatauto.sh" "$rmnt/usr/local/bin/"
@@ -98,6 +98,7 @@ echo "$0 Finished..."
 arch-chroot "$rmnt" "$idir"/arch0install.sh
 ##exit chroot
 
+aline
 basefoot
 
 else
