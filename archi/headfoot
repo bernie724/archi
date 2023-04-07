@@ -12,7 +12,7 @@ echo "flatpak for userspace and desktop apps when avialable."
 
 basefoot () {
 #set $auser admin and msg
-echo "$osn is done!."
+echo "$osn is done!"
 echo "Things to do:"
 echo "Use 'flatpak search <term>' to find more apps."
 echo "Change themes in xfce with: darkxfce.sh or litexfce.sh"

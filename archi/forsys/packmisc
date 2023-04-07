@@ -4,7 +4,7 @@ ipacs () {
 ##packages pacman
 cd $idir
 pnum=$(cat "$plist" | wc -l)
-echo "pacman will install $pnum packages, this will take a bit..."
+echo "pacman will install $pnum packages, this will take a bit.."
 
 if [ "$pverbose" = "false" ]; then
 echo -n "Installing."
@@ -33,7 +33,7 @@ echo ".okay."
 echo -n "Add flatpak repo [flathub]..."
 (flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo > /dev/null 2>&1) && echo ".okay."
 fnum=$(cat "$flist" | wc -l)
-echo "flatpak will install $fnum apps, this will take a while..."
+echo "flatpak will install $fnum apps, this will take a while.."
 
 if [ "$fverbose" = "false" ]; then
 echo -n "Installing."
