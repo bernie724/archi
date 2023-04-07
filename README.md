@@ -2,7 +2,7 @@
 ### Purpose
 A personal set of scripts to fully automate (no interaction, **1** command) the installation of Arch Linux as a complete Desktop System. 
 
-I am moving systems away from distro package managers (as much as I can), to be more nimble as an operator, in so creating clean modular deployments, and maintaining such systems with intelligent administrative values. This install is a modern Arch foundation and a flatpak-apps environment for the ongoing desktop experience.  *Current situation: 2887 (dpkg), 30 (flatpak), 13 (snap)*
+I am moving systems away from distro package managers (as much as I can), to be more nimble as an operator, in so creating clean modular deployments, and maintaining such systems with intelligent administrative values. This install is a modern Arch foundation and a flatpak-apps environment for the ongoing desktop experience.  *My current desktop's situation: 2887 (dpkg), 30 (flatpak), 13 (snap)*
 
 I have nothing to do with Arch Linux or flatpak for that matter, this is for my personal use.
 
