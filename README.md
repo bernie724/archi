@@ -19,7 +19,7 @@ Copy and unpack the archi.tgz (above) to a booted Arch Install ISO and run arch0
 scp username@10.0.0.1:/tmp/archi.tgz .
 tar xzpf archi.tgz
 cd archi/; ./arch0base.sh 
-#that's it, this will have a final warning and start the batch
+#that's it, this will have a final warning and start the install
 ```
 ![simplescp](https://user-images.githubusercontent.com/20193396/230524685-c2e340a2-4596-49de-85f3-539b1a61c481.png)
 #### Configuring the scripts (optional)
