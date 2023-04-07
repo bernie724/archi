@@ -1,4 +1,6 @@
 #!/bin/bash
+##B.Thompson
+##boot related tasks
 
 prepboot (){
 ##boot loader prep

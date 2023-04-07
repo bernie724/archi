@@ -1,5 +1,6 @@
 #!/bin/bash
-
+##B.Thompson
+##package tasks
 ipacs () {
 ##packages pacman
 cd $idir

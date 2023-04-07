@@ -1,5 +1,6 @@
 #!/bin/bash
-
+##B.Thompson
+##optional and extra tasks
 regen () {
 ##regen linux
 echo -n "Regenerating linux/os/$auser..."
