@@ -13,11 +13,16 @@ echo "flatpak for userspace and desktop apps when avialable."
 }
 
 basefoot () {
-#set $auser admin and msg
+if [ "$areboot" = "true" ]; then
+clear
+fi
+
 msg "${BPURPLE}$osn is done!${CLS}"
 msg "${BOLD}Things to do:${CLS}"
-echo "Use 'flatpak search <term>' to find more apps."
+echo "Use 'flatpak search <term>' to find more apps, or flats <term>"
+echo "Install multiply flatpak apps using lists with flatiset.sh"
 echo "Change themes in xfce with: darkxfce.sh or litexfce.sh"
+echo "Create a new user with an encrypted (luks) home using homectl create"
 aline
 msg "${BOLD}Boot housekeeping:${CLS}"
 echo "Change your boot order OR remove the media OR hit [F12]"
@@ -27,7 +32,6 @@ umount "$rmnt" || umount -f "$rmnt" || umount -l "$rmnt"
 swapoff "$rdev$spar"
 
 if [ "$areboot" = "true" ]; then
-##sleep and spin
 x=0
 stime=15
 msgn "${BRED}Rebooting${CLS} in $stime seconds. Enjoy! -bt ${GREEN}"
