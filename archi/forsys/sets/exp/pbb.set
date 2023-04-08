@@ -5,8 +5,7 @@ dhcpcd
 netctl
 openssh
 htop
-fortune-mod
 terminus-font
 vim
+lighttpd
 tar
-flatpak

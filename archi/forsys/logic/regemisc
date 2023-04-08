@@ -13,9 +13,10 @@ useradd -m "$auser" && echo -n "."
 if [ -d "$bbdir" ]; then
 cp "$bbdir"/Butterfly.jpg "/$bmnt/$awall"
 fi
-##get xfce4 going
+##get xfce4 going or not...
 if [ "$awm" = "false" ]; then
 rm "$ahome/.profile"
+rm "/etc/skel/.profile"
 else
 touch "$ahome"/.Xauthority
 touch "$ahome"/.xinitrc
