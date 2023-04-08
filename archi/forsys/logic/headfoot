@@ -1,0 +1,54 @@
+#!/bin/bash
+##B.Thompson
+##header and footer
+basehead () {
+aline
+echo "read: https://wiki.archlinux.org/title/installation_guide"
+aline
+echo "When these set of scripts are complete, this machine will" 
+echo "be a powerful Arch [$osn] system; ready for 2023."
+echo "Goal: A clean, quick, nimble and progressive desktop."
+echo "Reasonable package (pacman) use for base/core/modern operations,"
+echo "flatpak for userspace and desktop apps when avialable."
+}
+
+basefoot () {
+#set $auser admin and msg
+msg "${BPURPLE}$osn is done!${CLS}"
+msg "${BOLD}Things to do:${CLS}"
+echo "Use 'flatpak search <term>' to find more apps."
+echo "Change themes in xfce with: darkxfce.sh or litexfce.sh"
+aline
+msg "${BOLD}Boot housekeeping:${CLS}"
+echo "Change your boot order OR remove the media OR hit [F12]"
+echo "OR select 'Boot existing OS' from the Arch ISO boot menu"
+umount "$rmnt/$bmnt" || umount -f "$rmnt/$bmnt" || umount -l "$rmnt/$bmnt"
+umount "$rmnt" || umount -f "$rmnt" || umount -l "$rmnt"
+swapoff "$rdev$spar"
+
+if [ "$areboot" = "true" ]; then
+##sleep and spin
+x=0
+stime=15
+msgn "${BRED}Rebooting${CLS} in $stime seconds. Enjoy! -bt ${GREEN}"
+spin='-\|/'
+max=$(( $stime * 10 ))
+pd=' '
+while [ $x -le $max ]
+do
+  x=$(( $x + 1 ))
+ if [ $x -le $max ]; then
+ i=$(( (i+1) %4 ))
+  echo -ne "\b${spin:$i:1}"
+ else
+echo -ne "\b$pd"
+ fi
+sleep .10
+done
+reboot
+else
+aline
+msg "${BGREEN}reboot & Enjoy!${CLS} -bt" 
+aline
+fi
+}
