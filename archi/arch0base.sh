@@ -1,18 +1,21 @@
 #!/bin/bash
 ##B.Thompson
 source archi.conf
-source headfoot
+source forsys/logic/headfoot
+source forsys/logic/color
 clear
 setfont "$afont"
 basehead
 aline
 echo "Did you need to vim/nano archi.conf first.."
-echo "$0 will DESTROY your entire [$rdev] disk!!!"
-echo -n "$0 is for testing ONLY! Proceed [YES] "; read destroysystem
+msg "$0 will ${BRED}DESTROY${CLS} your entire [$rdev] disk!!!"
+msgn "$0 is for ${YELLOW}testing ONLY!${CLS} Proceed [YES] ${RED}"; read destroysystem
+
 if [ "$destroysystem" = "YES" ]; then
+msgn ${CLS}
 aline
-echo "Sys:[$osn] Host:[$ahost] User:[$auser] Pass:[$apass]"
-echo "When complete make sure to change your boot order!"
+msg "(archi.conf) Sys:${BOLD}[$osn] ${CLS}Host:${BOLD}[$ahost]${CLS} User:${BOLD}[$auser]${CLS} Pass:${BOLD}[$apass]${CLS}"
+msg "${CYAN}When complete make sure to change your boot order!${CLS}"
 aline
 
 ##complete wipe/format disk 1 [rdev]
@@ -27,7 +30,6 @@ fdisk -l | grep "$rdev$rpar"
 fi
 
 ##format first disk partitions
-aline
 echo -n "Formating partitions/swap..."
 mkfs.fat -F 32 "$rdev$bpar" > /dev/null 2>&1
 mkfs.ext4 -q -F "$rdev$rpar" > /dev/null 2>&1
@@ -53,15 +55,16 @@ timedatectl | grep Universal | awk '{ print $3,$4,$5,$6 }'
 
 ##linux base
 aline
-echo "This will take a few minutes, get some coffee.."
+msg "${BOLD}$0 will take a few minutes, brew some coffee..${CLS}"
 echo -n "Installing linux [$rdev$rpar]..."
-(pacstrap -K "$rmnt" base linux linux-firmware > /dev/null 2>&1) && echo ".okay."
+((pacstrap -K "$rmnt" base linux linux-firmware > /dev/null 2>&1) && echo ".okay.") || (msg "${RED}failed! this can't happen reboot the iso!${CLS}"; exit 1)
 genfstab -U "$rmnt" >> "$rmnt/etc/fstab"
-aline
+
+##customize local settings
 echo -n "Configure $osn..."
-mkdir -p "$rmnt/$idir"
-cp "$aconf" "$rmnt/$idir/"
-mv "$rmnt/etc/skel" "$rmnt/etc/skel.arch"
+mkdir -p "$rmnt/$idir" && echo -n "."
+cp "$aconf" "$rmnt/$idir/" && echo -n "."
+mv "$rmnt/etc/skel" "$rmnt/etc/skel.arch" && echo -n "."
 
 ##check spash screen true 
 if [ "$asplash" = "true" ]; then
@@ -77,10 +80,10 @@ fi
 
 ##arch-chroot prep
 #cp "$atool/archi.jpg" "$rmt/$bmnt"
-mv "$atool/litexfce.sh" "$rmnt/usr/local/bin/"
-mv "$atool/darkxfce.sh" "$rmnt/usr/local/bin/"
-mv "$atool/flatiset.sh" "$rmnt/usr/local/bin/"
-mv "$atool/pacrset.sh" "$rmnt/usr/local/bin/"
+mv "$atool/litexfce.sh" "$rmnt/$aloc/bin/"
+mv "$atool/darkxfce.sh" "$rmnt/$aloc/bin/"
+mv "$atool/flatiset.sh" "$rmnt/$aloc/bin/"
+mv "$atool/pacrset.sh" "$rmnt/$aloc/bin/"
 cp readme.txt "$rmnt/$idir/"
 if [ "$aauto" = "true" ]; then
 mv "$atool/profile.auto" "$atool/".profile
@@ -93,7 +96,7 @@ mv "$atool" "$rmnt/etc/"
 cp -rp forsys/* "$rmnt/$idir/" 
 echo ".okay."
 aline
-echo "$0 Finished..."
+msgn "${BOLD}$0 ${CLS}Finished..."
 
 ##handoff and finish the install in chroot sys
 arch-chroot "$rmnt" "$idir"/arch0install.sh

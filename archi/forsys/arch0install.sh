@@ -1,5 +1,6 @@
 #!/bin/bash
 ##B.Thompson
+##main installs after arch-chroot
 if [ $UID -ne 0 ]; then
 echo "run as root!"
 exit 1
@@ -9,11 +10,12 @@ fi
 idir=/usr/local/archi
 cd "$idir"
 source archi.conf 
-source bootmisc
-source packmisc
-source optmisc
+source logic/bootmisc
+source logic/packmisc
+source logic/regemisc
+source logic/color
 ##time
-echo "...[$0 Starting arch-chroot]"
+msg " ${BOLD}$0 ${BGREEN}Starting...${CLS}"
 aline
 ln -sf /usr/share/zoneinfo/"$ltime" /etc/localtime
 hwclock --systohc
@@ -57,8 +59,11 @@ ipacs
  iplym
  fi
 aline
-iscreen
 idaemon
+awm=$((which startxfce4 > /dev/null 2>&1 && echo true) || echo false)
+if [ "$awm" = "true" ]; then
+iscreen
+fi
 aline
 regen
  if [ "$pron" = "true" ]; then
@@ -71,8 +76,12 @@ regen
  fi
 aline
 reman
+if [ "$acrypt" = "true" ]; then
 aline
 icrypt
+else
+rm "$idir/$aconf"
+fi
 ##finish admin area
 chown -R "$auser" "$aloc"
 chmod -x $0

@@ -1,4 +1,6 @@
 #!/bin/bash
+##B.Thompson
+##disk mangler
 source archi.conf
 (
 echo d
