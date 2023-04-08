@@ -65,7 +65,7 @@ The install is **one command** with **NO** interaction:
 
 #### Archi running
 
-![archicolor](https://user-images.githubusercontent.com/20193396/230704330-40044a8e-3720-4fab-873a-51b147c6145b.png)
+![archiruncolor](https://user-images.githubusercontent.com/20193396/230705332-83a79ecb-79a6-4de7-8926-40e7e0fa3fd3.png)
 
 #### Conclusion
 
