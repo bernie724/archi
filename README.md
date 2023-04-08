@@ -23,21 +23,19 @@ cd archi/; ./arch0base.sh
 ```
 ![simplescp](https://user-images.githubusercontent.com/20193396/230524685-c2e340a2-4596-49de-85f3-539b1a61c481.png)
 #### Configuring the scripts (optional)
-I would review and leave the settings for the first run, these scripts dont have a lot of checks yet, the config file is archi/archi.conf and The install sets are located @ archi/forsys/sets 
+I would review and leave the settings for the first run, these scripts dont have a lot of conditional checks yet, the config file is archi/archi.conf and the install sets are located @ archi/forsys/sets 
 
 e.g. vim/nano archi.conf to tailor your install. default: user:[archi] pass:[archi]
 
 #### Install Overview
 The install is **one command** with **NO** interaction:
 
-|Step  | Script | Info                                                             |
-| ---- | ------ | ----                                                             |
-| 1    | arch0base.sh    | this is the install command, format/base/sanity         |
-| 2    | arch0install.sh | this is after arch-chroot, bootloader/desktop/apps      |
-| conf | archi.conf      | use this file to customize an install                   |
+|Step  | Script | Info                                                                |
+| ---- | ------ | ----                                                                |
+| 1    | arch0base.sh    | this is the install command, format/linux/core/sanity      |
+| 2    | arch0install.sh | this is after arch-chroot, boot/arch/daemons/desktop/apps  |
+| conf | archi.conf      | use this file to customize an install                      |
 
-##### Archi running...
-![archirunning2](https://user-images.githubusercontent.com/20193396/230499696-fa9bce5e-9502-4316-89c6-74bdc5ab6837.png)
 ##### When complete, the total system is installed, with all included flatpaks and a Desktop GUI (xfce4)
 ### Finished Desktop
 ![archiComplete](https://user-images.githubusercontent.com/20193396/229312252-cf00e46d-e456-4ba9-ada8-c11ac1826290.png)
@@ -64,6 +62,10 @@ The install is **one command** with **NO** interaction:
 |Linux   | (Ubuntu 11.3.0-1ubuntu1~22.04) [kernel:5.19.0-35-generic]      |
 |Intel   | CPU [Sky Lake]: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz*     |
 |laptop  | 8 logical CPUs (3.80GHz) and 16GB of RAM                       |
+
+#### Archi running
+
+![archicolor](https://user-images.githubusercontent.com/20193396/230704330-40044a8e-3720-4fab-873a-51b147c6145b.png)
 
 #### Conclusion
 
