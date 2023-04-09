@@ -14,7 +14,7 @@ fi
 }
 
 iboot () {
-##Build/install limine/ccrypt 
+##Build/install limine 
 echo -n "Cloning $bapp [bootloader]..."
 cd "$apkg"
 (git clone https://aur.archlinux.org/$bapp.git > /dev/null 2>&1) && echo ".okay."

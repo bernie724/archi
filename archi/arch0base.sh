@@ -30,7 +30,7 @@ fdisk -l | grep "$rdev$rpar"
 fi
 
 ##format first disk partitions
-echo -n "Formating [$afs] partition & swap..."
+echo -n "Formating [$rdev] partitions & swap..."
 if [ "$afs" = "ext4" -o "$afs" = "btrfs" ]; then
  if [ "$afs" = "btrfs" ]; then
 mkfs."$afs" -f -q "$rdev$rpar" > /dev/null 2>&1
@@ -43,7 +43,7 @@ echo "afs= must be ext4 or btrfs in $aconf"
 exit 1
 fi
 mount "$rdev$rpar" "$rmnt" 
-##boot partition
+##format boot partition
 mkfs.fat -F 32 "$rdev$bpar" > /dev/null 2>&1
 mount --mkdir "$rdev$bpar" "$rmnt/$bmnt" #/dev/sda1 /mnt/boot
 
@@ -94,6 +94,7 @@ mv "$atool/litexfce.sh" "$rmnt/$aloc/bin/"
 mv "$atool/darkxfce.sh" "$rmnt/$aloc/bin/"
 mv "$atool/rmpacset.sh" "$rmnt/$aloc/bin/"
 mv "$atool/flatiset.sh" "$rmnt/$aloc/bin/"
+mv "$atool/aursi.sh" "$rmnt/$aloc/bin/"
 cp readme.txt "$rmnt/$idir/"
 if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
 mv "$atool/profile.auto" "$atool/".profile
