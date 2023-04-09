@@ -51,7 +51,8 @@ The install is **one command** with **NO** interaction:
 | /             | 5.9G   | Full install                 |
 | flatpak       | 10G    | 33 apps     (47 with deps)   |
 | pacman        | -      | 56 installs (651 core/deps)  |
-| tasks/threads | 75/135 | Idle Desktop [xfce4]         | 
+| tasks/threads | 75/135 | Idle Desktop [xfce4]         |
+| tasks/kthreads| 31/93  | root Console                 |
 
 
 |Script        | Start | Finish | Total  |
