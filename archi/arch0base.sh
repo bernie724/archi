@@ -1,8 +1,8 @@
 #!/bin/bash
 ##B.Thompson
 source archi.conf
-source forsys/logic/headfoot
 source forsys/logic/color
+source forsys/logic/headfoot
 clear
 setfont "$afont"
 basehead
@@ -30,10 +30,21 @@ fdisk -l | grep "$rdev$rpar"
 fi
 
 ##format first disk partitions
-echo -n "Formating partitions/swap..."
-mkfs.fat -F 32 "$rdev$bpar" > /dev/null 2>&1
-mkfs.ext4 -q -F "$rdev$rpar" > /dev/null 2>&1
+echo -n "Formating [$afs] partition & swap..."
+if [ "$afs" = "ext4" -o "$afs" = "btrfs" ]; then
+ if [ "$afs" = "btrfs" ]; then
+mkfs."$afs" -f -q "$rdev$rpar" > /dev/null 2>&1
+ fi
+ if [ "$afs" = "ext4" ]; then
+mkfs."$afs" -F -q "$rdev$rpar" > /dev/null 2>&1
+ fi
+else
+echo "afs= must be ext4 or btrfs in $aconf"
+exit 1
+fi
 mount "$rdev$rpar" "$rmnt" 
+##boot partition
+mkfs.fat -F 32 "$rdev$bpar" > /dev/null 2>&1
 mount --mkdir "$rdev$bpar" "$rmnt/$bmnt" #/dev/sda1 /mnt/boot
 
 ##second disk
@@ -54,7 +65,6 @@ aline
 timedatectl | grep Universal | awk '{ print $3,$4,$5,$6 }'
 
 ##linux base
-aline
 msg "${BOLD}$0 will take a few minutes, brew some coffee..${CLS}"
 echo -n "Installing linux [$rdev$rpar]..."
 ((pacstrap -K "$rmnt" base linux linux-firmware > /dev/null 2>&1) && echo ".okay.") || (msg "${RED}failed! this can't happen reboot the iso!${CLS}"; exit 1)
@@ -82,10 +92,10 @@ fi
 #cp "$atool/archi.jpg" "$rmt/$bmnt"
 mv "$atool/litexfce.sh" "$rmnt/$aloc/bin/"
 mv "$atool/darkxfce.sh" "$rmnt/$aloc/bin/"
+mv "$atool/rmpacset.sh" "$rmnt/$aloc/bin/"
 mv "$atool/flatiset.sh" "$rmnt/$aloc/bin/"
-mv "$atool/pacrset.sh" "$rmnt/$aloc/bin/"
 cp readme.txt "$rmnt/$idir/"
-if [ "$aauto" = "true" ]; then
+if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
 mv "$atool/profile.auto" "$atool/".profile
 rm "$atool/profile.noauto"
 else

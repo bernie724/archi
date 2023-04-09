@@ -9,6 +9,7 @@ inetutils
 ntp
 openssh
 lighttpd
+btrfs-progs
 gvfs
 gnu-free-fonts
 terminus-font

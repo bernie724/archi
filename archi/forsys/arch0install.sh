@@ -10,10 +10,10 @@ fi
 idir=/usr/local/archi
 cd "$idir"
 source archi.conf 
+source logic/color
 source logic/bootmisc
 source logic/packmisc
 source logic/regemisc
-source logic/color
 ##time
 msg " ${BOLD}$0 ${BGREEN}Starting...${CLS}"
 aline
@@ -32,7 +32,6 @@ echo "FONT=$afont" >> /etc/vconsole.conf
 echo "$ahost" > /etc/hostname
 
 ##change root pass
-aline
 echo -n "changing root password..."
 ((echo $apass; echo $apass) | passwd > /dev/null 2>&1) && echo "..okay."
 ##add a user
@@ -45,7 +44,7 @@ mkdir "$apkg"
 
 ##call functions for system gen
  aline
- if [ "$aauto" = "true" ]; then
+ if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
  iauto
  fi
 imods
@@ -60,10 +59,19 @@ ipacs
  fi
 aline
 idaemon
+##install ssaver wallpaper
 awm=$((which startxfce4 > /dev/null 2>&1 && echo true) || echo false)
 if [ "$awm" = "true" ]; then
 iscreen
 fi
+##acrypt, lock up the conf file on the live system
+if [ "$acrypt" = "true" ]; then
+aline
+icrypt
+else
+rm "$idir/$aconf"
+fi
+##regenerate sys/user/linux
 aline
 regen
  if [ "$pron" = "true" ]; then
@@ -76,12 +84,5 @@ regen
  fi
 aline
 reman
-if [ "$acrypt" = "true" ]; then
-aline
-icrypt
-else
-rm "$idir/$aconf"
-fi
 ##finish admin area
-chown -R "$auser" "$aloc"
 chmod -x $0

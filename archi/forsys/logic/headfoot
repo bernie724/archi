@@ -5,7 +5,7 @@ basehead () {
 aline
 echo "read: https://wiki.archlinux.org/title/installation_guide"
 aline
-echo "When these set of scripts are complete, this machine will" 
+echo "When this set of scripts are complete, this machine will" 
 echo "be a powerful Arch [$osn] system; ready for 2023."
 echo "Goal: A clean, quick, nimble and progressive desktop."
 echo "Reasonable package (pacman) use for base/core/modern operations,"
@@ -18,6 +18,8 @@ clear
 fi
 
 msg "${BPURPLE}$osn is done!${CLS}"
+msg "Sys:${BOLD}[$osn] ${CLS}Host:${BOLD}[$ahost]${CLS} User:${BOLD}[$auser]${CLS} Pass:${BOLD}[$apass]${CLS}"
+aline
 msg "${BOLD}Things to do:${CLS}"
 echo "Use 'flatpak search <term>' to find more apps, or flats <term>"
 echo "Install multiply flatpak apps using lists with flatiset.sh"

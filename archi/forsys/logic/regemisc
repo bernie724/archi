@@ -3,23 +3,44 @@
 ##regen and extra tasks
 regen () {
 ##regen linux/user
-echo -n "Regenerating linux/env/$auser..."
+echo -n "Regenerating linux+env..."
 (userdel -r "$auser" > /dev/null 2>&1) && echo -n "."
 sleep .5 && echo -n "."
-useradd -m "$auser" && echo -n "."
-((echo $apass; echo $apass) | passwd $auser > /dev/null 2>&1) && echo -n "."
-(mkinitcpio -p linux > /dev/null 2>&1) && echo ".okay."
+((mkinitcpio -p linux > /dev/null 2>&1) && echo ".okay.") || echo "mkinitcpio -p linux failed!"
 ##boot image
 if [ -d "$bbdir" ]; then
 cp "$bbdir"/Butterfly.jpg "/$bmnt/$awall"
 fi
+
+if [ "$pbon" = "true" ]; then
+msg "${YELLOW}Interactive install ${BOLD}$pbon${YELLOW}, $auser will be created after reboot; login as root.${CLS}"
+touch ~/.firstboot
+echo 'if [ -f ~/.firstboot ]; then
+homectl create '"$auser"' --disk-size='"$pbds"' --uid='"$pbuid"' --fs-type='"$afs"' --auto-resize-mode=off
+chown -R '"$auser"' '"$aloc"'
+echo "login as '"$auser"' when complete."
+echo "Reconfiguring packages per sets..."
+rmpacset.sh rlist.set
+flatiset.sh googlezoom.set
+rm ~/.firstboot
+exit
+else
+cp /etc/skel/.profile .
+fi' > ~/.profile
+else
+echo -n "Regenerating $auser..."
+useradd -m "$auser" && echo -n "."
+((echo $apass; echo $apass) | passwd $auser > /dev/null 2>&1) && echo -n "."
+chown -R "$auser" "$aloc"
 ##get xfce4 going or not...
-if [ "$awm" = "false" ]; then
+ if [ "$awm" = "false" ]; then
 rm "$ahome/.profile"
 rm "/etc/skel/.profile"
-else
+ else
 touch "$ahome"/.Xauthority
 touch "$ahome"/.xinitrc
+ fi
+echo ".okay."
 fi
 }
 
