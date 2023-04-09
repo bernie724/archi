@@ -14,7 +14,7 @@ Boot the latest Arch Linux Install ISO on the system that will do a **full and c
 
 Arch Download: https://archlinux.org/download/
 
-Global Mirror: http://mirror.rackspace.com/archlinux/iso/
+Global Mirror: http://mirror.rackspace.com/archlinux/iso/latest/
 
 Copy and unpack the archi.tgz (above) to a booted Arch Install ISO and run arch0base.sh  
 ```sh
