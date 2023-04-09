@@ -44,6 +44,10 @@ The install is **one command** with **NO** interaction:
 ![archiOpen](https://user-images.githubusercontent.com/20193396/229312258-fdd0f36c-873a-4eca-922b-9f1a25629af1.png)
 ![archiMinimized](https://user-images.githubusercontent.com/20193396/229314436-9343d304-1261-4e01-8cd6-261193597ff4.png)
 
+###### still need aliens (aur), There is a script for that.
+![aliens](https://user-images.githubusercontent.com/20193396/230786626-befd98c8-e870-4ea8-9a12-c1b4bf2a28a6.png)
+
+
 #### Stats
 |Resource       | Stat    | Desc                             |
 | ----          | ----    | ----------------                 |
