@@ -45,12 +45,13 @@ The install is **one command** with **NO** interaction:
 ![archiMinimized](https://user-images.githubusercontent.com/20193396/229314436-9343d304-1261-4e01-8cd6-261193597ff4.png)
 
 #### Stats
-|Resource     | Stat | Desc                         |
-| ----        | ---- | ----------------             |
-| Mem         | 586MB| Idle Desktop [xfce4]         |
-| /           | 5.9G | Full install                 |
-| flatpak     | 10G  | 33 apps     (47 with deps)   |
-| pacman      | -    | 56 installs (149 with deps)  |
+|Resource       | Stat   | Desc                         |
+| ----          | ----   | ----------------             |
+| Mem           | 586MB  | Idle Desktop [xfce4]         |
+| /             | 5.9G   | Full install                 |
+| flatpak       | 10G    | 33 apps     (47 with deps)   |
+| pacman        | -      | 56 installs (651 core/deps)  |
+| tasks/threads | 75/135 | Idle Desktop [xfce4]         | 
 
 
 |Script        | Start | Finish | Total  |
