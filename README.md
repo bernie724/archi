@@ -63,9 +63,9 @@ The install is **one command** with **NO** interaction:
 |Intel   | CPU [Sky Lake]: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz*     |
 |laptop  | 8 logical CPUs (3.80GHz) and 16GB of RAM                       |
 
-#### Archi running
+#### archi running
 
-![archiruncolor](https://user-images.githubusercontent.com/20193396/230705332-83a79ecb-79a6-4de7-8926-40e7e0fa3fd3.png)
+![archithreerun](https://user-images.githubusercontent.com/20193396/230749166-5b3c624a-299d-45e7-8664-ab01cc5bf844.png)
 
 #### Conclusion
 
