@@ -39,6 +39,10 @@ alias pacqu="pacman -Qu" #query needs update
 alias pacqm="pacman -Qm" #query alien (aur) repo installs
 alias pacqn="pacman -Qn" #query native (arch) repo installs
 alias pacqs="pacman -Qs" #query package [name]
+alias crypte="ccrypt -e"
+alias cryptd="ccrypt -d"
+alias cryptk="ccrypt -k"
+alias cryptc="ccrypt -c"
 PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$ "
 fi
 
