@@ -16,6 +16,8 @@ Arch Download: https://archlinux.org/download/
 
 Global Mirror: http://mirror.rackspace.com/archlinux/iso/latest/
 
+Virutal Box: https://www.virtualbox.org/wiki/Downloads
+
 Copy and unpack the archi.tgz (above) to a booted Arch Install ISO and run arch0base.sh  
 ```sh
 scp username@10.0.0.1:~/archi/archi.tgz .
