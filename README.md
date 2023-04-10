@@ -47,9 +47,6 @@ cd archi/
 vim archi.conf # or nano
 ./arch0base.sh
 ```
-
-e.g. vim/nano archi.conf to tailor your install. default: user:[archi] pass:[archi]
-
 #### Install Overview
 The install is **one command** with **NO** interaction:
 
