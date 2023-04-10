@@ -22,7 +22,9 @@ Pre:
 Before config/run, you need to scp the archi.tgz to a booted Arch Install ISO and unpack.
 From the ISO root (#):
 e.g.
-scp user@10.0.3.1:/tmp/archi.tgz .
+curl -s -L https://github.com/bernie724/archi/raw/main/archi.tgz > archi.tgz
+OR 
+scp user@10.0.3.1:/tmp/archi.tgz ## <-- a your local user and machine.
 tar xpzf archi.tgz
 All my tests and scripting was on VirtualBox.  I plan (for myself) to try it on
 some old hardware next, and then my actual systems currently running a varity of messy linux.
