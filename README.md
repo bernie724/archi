@@ -18,12 +18,22 @@ Global Mirror: http://mirror.rackspace.com/archlinux/iso/latest/
 
 VirutalBox: https://www.virtualbox.org/wiki/Downloads
 
+#### Two ways to get the archi.tgz file to the booted Arch Linux ISO
+##### Method #1
+From the Arch Linux booted ISO:
+```sh
+curl --location https://github.com/bernie724/archi/raw/main/archi.tgz > archi.tgz
+tar xzpf archi.tgz
+cd archi/; ./arch0base.sh 
+#That's it! This will have a final warning, and then start and complete the install without further any interaction
+```
+##### Method #2
 Copy and unpack the archi.tgz (above) to a booted Arch Install ISO and run arch0base.sh  
 ```sh
 scp username@10.0.0.1:~/archi/archi.tgz .
 tar xzpf archi.tgz
 cd archi/; ./arch0base.sh 
-#that's it, this will have a final warning and start the install
+#That's it! This will have a final warning, and then start and complete the install without any further interaction
 ```
 ![simplescp](https://user-images.githubusercontent.com/20193396/230524685-c2e340a2-4596-49de-85f3-539b1a61c481.png)
 #### Configuring the scripts (optional)
