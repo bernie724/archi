@@ -22,7 +22,7 @@ VirutalBox: https://www.virtualbox.org/wiki/Downloads
 ##### Method #1
 From the Arch Linux booted ISO:
 ```sh
-curl -L https://github.com/bernie724/archi/raw/main/archi.tgz > archi.tgz
+curl -s -L https://github.com/bernie724/archi/raw/main/archi.tgz > archi.tgz
 tar xzpf archi.tgz
 cd archi/; ./arch0base.sh 
 #That's it! This will have a final warning, and then start and complete the install without any further interaction
