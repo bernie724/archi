@@ -46,7 +46,7 @@ vim archi.conf # or nano
 ./arch0base.sh
 ```
 #### Install Overview
-The install is **one command** with **NO** interaction:
+After configuring (or not the target is a virtual env) the archi.conf (as already explained) the install is one command with no interaction:
 
 |Step  | Script | Info                                                                |
 | ---- | ------ | ----                                                                |
