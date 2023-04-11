@@ -92,6 +92,6 @@ The install is **one command** with **NO** interaction:
 
 ![archithreerun](https://user-images.githubusercontent.com/20193396/230749166-5b3c624a-299d-45e7-8664-ab01cc5bf844.png)
 
-If you use, test or try these scripts, thanks. Feedback, fixes, improvements, screenshots, whatnot would be nice. 
+If you use, test or try these scripts, thanks. Feedback, fixes, improvements, screenshots, whatnot would be nice, the discussion board should work. 
 
 *archi is inspired from a.r.c.h.i.(e) from the tabletop rpg game Rifts 'Artificial Robot Cerebellum Housing Intellect (Experiment)'*
