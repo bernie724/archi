@@ -2,74 +2,14 @@
 ##B.Thompson
 ##disk mangler
 source archi.conf
-(
-echo d
-echo
-echo d
-echo
-echo d
-echo
-echo d
-echo
-echo w
-) | fdisk "$rdev"
+parted --script -a optimal -- "$rdev" \
+	mklabel gpt \
+	mkpart primary 1MiB 1024MiB \
+	mkpart primary 1024MiB 2048MiB \
+	mkpart primary 2048MiB -2048s 
 
-(
-echo n
-echo p
-echo 
-echo 
-echo +1024M
-echo N
-echo
-echo t
-echo af
-echo n
-echo p
-echo 
-echo
-echo +1024M
-echo N
-echo
-echo t
-echo 2
-echo 82
-echo n
-echo p
-echo 
-echo 
-echo
-echo N
-echo 
-echo t
-echo 3
-echo 83
-echo
-echo w
-) | fdisk "$rdev"
-
-if [ "$bpdisk" = "true" ]; then
-(
-echo d
-echo
-echo d
-echo
-echo d
-echo
-echo d
-echo
-echo w
-) | fdisk "$bdisk"
-
-(
-echo n
-echo p
-echo 
-echo 
-echo
-echo 
-echo
-echo w
-) | fdisk "$bdisk"
-
+if [ "$fpdisk" = "true" ]; then
+parted --script -a optimal -- "$bdev" \
+	mklabel gpt \
+	mkpart primary 1MiB -2048s 
 fi

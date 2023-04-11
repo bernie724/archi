@@ -2,7 +2,6 @@ intel-ucode
 pacman-contrib
 networkmanager
 dhcpcd
-netctl
 openssh
 htop
 terminus-font

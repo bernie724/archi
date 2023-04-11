@@ -23,7 +23,6 @@ chmod +x prepdisk.sh
 ./prepdisk.sh > /dev/null 2>&1
 chmod -x prepdisk.sh
 echo "...okay."
-fdisk -l | grep "$rdev$bpar"
 fdisk -l | grep "$rdev$rpar"
 fi
 ##format first disk partitions
@@ -45,10 +44,10 @@ mkfs.fat -F 32 "$rdev$bpar" > /dev/null 2>&1
 mount --mkdir "$rdev$bpar" "$rmnt/$bmnt" #/dev/sda1 /mnt/boot
 ##second disk
 if [ "$bpdisk" = "true" ]; then
-echo -n "Prepairing Disk [$bdisk]"
-mkfs.ext4 -q -F "$bdisk" > /dev/null 2>&1
-mount --mkdir "$bdisk" "$rmnt"/var/lib/flatpak && echo "..okay."
-fdisk -l | grep "$bdisk"
+echo -n "Prepairing Disk [$bdev]"
+mkfs.ext4 -q -F "$bdev" > /dev/null 2>&1
+mount --mkdir "$bdev" "$rmnt"/var/lib/flatpak && echo "..okay."
+fdisk -l | grep "$bdev"
 fi
 ##swap
 mkswap "$rdev$spar" > /dev/null 2>&1
