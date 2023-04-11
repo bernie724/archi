@@ -67,15 +67,10 @@ fi
 ##regenerate sys/user/linux
 aline
 regen
-if [ "$pron" = "true" ]; then
-aline
-repac
-fi
 if [ "$fpon" = "true" ]; then
 aline
 iflats
 fi
 aline
 reman
-##finish admin area
 chmod -x $0

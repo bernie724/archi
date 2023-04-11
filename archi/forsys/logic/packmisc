@@ -58,13 +58,3 @@ done < "$mlist"
 fi
 echo ".okay."
 }
-repac () {
-cd $idir
-pnum=$(cat "$rlist" | wc -l)
-echo "Removing $pnum packages..."
-while read set; do
-echo -n " Removing [$set."
-((pacman -R --noconfirm --noprogressbar "$set" > /dev/null 2>&1) && echo ".okay] ") || echo ".failed!] "
-let pnum--
-done < "$rlist"
-}
