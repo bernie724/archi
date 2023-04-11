@@ -24,7 +24,7 @@ VirutalBox: https://www.virtualbox.org/wiki/Downloads
 ##### Method #1
 From the Arch Linux booted ISO:
 ```sh
-curl -s -L https://github.com/bernie724/archi/raw/main/archi.tgz > archi.tgz
+curl -s -L https://github.com/bernie724/archi/raw/main/archi/archi.tgz > archi.tgz
 tar xzpf archi.tgz
 cd archi/; ./arch0base.sh 
 #That's it! This will have a final warning, and then start and complete the install without any further interaction
@@ -41,7 +41,7 @@ cd archi/; ./arch0base.sh
 #### Configuring the scripts (optional)
 I would review and leave the settings for the first run, these scripts dont have a lot of conditional checks yet, the config file is archi/archi.conf and the install sets are located @ archi/forsys/sets
 ```sh
-curl -s -L https://github.com/bernie724/archi/raw/main/archi.tgz > archi.tgz
+curl -s -L https://github.com/bernie724/archi/raw/main/archi/archi.tgz > archi.tgz
 tar xzpf archi.tgz
 cd archi/
 vim archi.conf # or nano
