@@ -1,6 +1,6 @@
 # archi
 ### Purpose
-A personal set of scripts to fully automate (no interaction, **1** command) the installation of Arch Linux as a complete Desktop System. 
+A personal set of scripts to fully automate the installation of Arch Linux as a complete Desktop System. 
 
 **Note:** This design is a format I am interested in setting up and testing. The script's config can be changed to your personal preferences **[change archi.conf file]** see optional.
 
