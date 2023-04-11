@@ -5,18 +5,16 @@ basehead () {
 aline
 echo "read: https://wiki.archlinux.org/title/installation_guide"
 aline
-echo "When this set of scripts are complete, this machine will" 
+echo "When this set of scripts are complete, this machine will"
 echo "be a powerful Arch [$osn] system; ready for 2023."
 echo "Goal: A clean, quick, nimble and progressive desktop."
 echo "Reasonable package (pacman) use for base/core/modern operations,"
 echo "flatpak for userspace and desktop apps when avialable."
 }
-
 basefoot () {
 if [ "$areboot" = "true" ]; then
 clear
 fi
-
 msg "${BPURPLE}$osn is done!${CLS}"
 msg "Sys:${BOLD}[$osn] ${CLS}Host:${BOLD}[$ahost]${CLS} User:${BOLD}[$auser]${CLS} Pass:${BOLD}[$apass]${CLS}"
 aline
@@ -32,7 +30,6 @@ echo "OR select 'Boot existing OS' from the Arch ISO boot menu"
 umount "$rmnt/$bmnt" || umount -f "$rmnt/$bmnt" || umount -l "$rmnt/$bmnt"
 umount "$rmnt" || umount -f "$rmnt" || umount -l "$rmnt"
 swapoff "$rdev$spar"
-
 if [ "$areboot" = "true" ]; then
 x=0
 stime=15
@@ -42,19 +39,19 @@ max=$(( $stime * 10 ))
 pd=' '
 while [ $x -le $max ]
 do
-  x=$(( $x + 1 ))
- if [ $x -le $max ]; then
- i=$(( (i+1) %4 ))
-  echo -ne "\b${spin:$i:1}"
- else
+x=$(( $x + 1 ))
+if [ $x -le $max ]; then
+i=$(( (i+1) %4 ))
+echo -ne "\b${spin:$i:1}"
+else
 echo -ne "\b$pd"
- fi
+fi
 sleep .10
 done
 reboot
 else
 aline
-msg "${BGREEN}reboot & Enjoy!${CLS} -bt" 
+msg "${BGREEN}reboot & Enjoy!${CLS} -bt"
 aline
 fi
 }

@@ -1,7 +1,6 @@
 #!/bin/bash
 ##B.Thompson
 ##boot related tasks
-
 prepboot (){
 ##boot loader prep
 echo -n "Installing base..."
@@ -12,22 +11,18 @@ if [ "$asudo" = "true" ]; then
 echo "$auser ALL=NOPASSWD: ALL" >> /etc/sudoers
 fi
 }
-
 iboot () {
-##Build/install limine 
+##Build/install limine
 echo -n "Cloning $bapp [bootloader]..."
 cd "$apkg"
 (git clone https://aur.archlinux.org/$bapp.git > /dev/null 2>&1) && echo ".okay."
-
 echo -n "Build $bapp..."
 cd "$apkg/$bapp"
 chown -R "$auser" "$apkg/$bapp"
 (su $auser -c "makepkg -si --noconfirm" > /dev/null 2>&1) && echo ".okay."
 }
-
 finboot () {
 ##config the boot loader limine #as noted many times grub hates me
-
 echo -n "Install $bapp..."
 cp /usr/share/limine/limine.sys "/$bmnt"
 limine-deploy "$rdev" 2> /dev/null
@@ -44,16 +39,15 @@ TERM_WALLPAPER_STYLE=centered
 INTERFACE_RESOLUTION=1280x800
 INTERFACE_BRANDING=Limine Boot Manager '"[$osn $arev]"'
 :'"$osn"'
-    PROTOCOL=linux
-    KERNEL_PATH=boot:///vmlinuz-linux
-    CMDLINE=root=UUID='"$ruuid"' '"$lcmd"'
-    MODULE_PATH=boot:///initramfs-linux.img' > "$idir/$alim"
+PROTOCOL=linux
+KERNEL_PATH=boot:///vmlinuz-linux
+CMDLINE=root=UUID='"$ruuid"' '"$lcmd"'
+MODULE_PATH=boot:///initramfs-linux.img' > "$idir/$alim"
 cp "$idir/$alim" "/$bmnt"
 #cp /etc/skel/archi.jpg /boot
 #rm /etc/skel/archi.jpg
 echo ".okay."
 }
-
 iscreen () {
 echo -n "Updating screensaver..."
 #create screensaver
@@ -68,7 +62,6 @@ cd "$idir"
 fi
 echo ".okay."
 }
-
 iplym () {
 #plymouth
 echo -n "Configuring splash [plymouth]..."
@@ -81,7 +74,6 @@ fi
 (plymouth-set-default-theme -R "$astheme" > /dev/null 2>&1) && echo -n "."
 echo ".okay."
 }
-
 iauto () {
 ##autologin tty1
 echo -n "Creating autologin..."
@@ -94,8 +86,6 @@ ExecStart=-/sbin/agetty --skip-login --nonewline --noissue --autologin '"$auser"
 ' > "/etc/systemd/system/getty@tty1.service.d/"$osn"ttyss.conf"
 echo ".okay."
 }
-
-
 idaemon () {
 ##daemons, vim vi link
 ln -s /usr/bin/vim /usr/bin/vi
@@ -117,5 +107,3 @@ chgrp "$auser" /srv/http/Webshare
 chmod 0775 /srv/http/Webshare
 echo ".okay."
 }
-
-
