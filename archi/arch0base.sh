@@ -82,7 +82,6 @@ mv "$atool/darkxfce.sh" "$rmnt/$aloc/bin/"
 mv "$atool/rmpacset.sh" "$rmnt/$aloc/bin/"
 mv "$atool/flatiset.sh" "$rmnt/$aloc/bin/"
 mv "$atool/alien.sh" "$rmnt/$aloc/bin/"
-cp readme.txt "$rmnt/$idir/"
 if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
 mv "$atool/profile.auto" "$atool/".profile
 rm "$atool/profile.noauto"
