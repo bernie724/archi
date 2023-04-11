@@ -20,7 +20,7 @@ VirutalBox: https://www.virtualbox.org/wiki/Downloads
 
 #### Two ways to get the archi.tgz file to the booted Arch Linux ISO
 ##### Method #1
-From the Arch Linux booted ISO:
+From the Arch Linux booted ISO. ISO doesn't have git:
 ```sh
 curl -s -L https://github.com/bernie724/archi/raw/main/archi/archi.tgz > archi.tgz
 tar xzpf archi.tgz
