@@ -22,7 +22,7 @@ Pre:
 Before config/run, you need to scp the archi.tgz to a booted Arch Install ISO and unpack.
 From the ISO root (#):
 e.g.
-curl -s -L https://github.com/bernie724/archi/raw/main/archi.tgz > archi.tgz
+curl -s -L https://github.com/bernie724/archi/raw/main/archi/archi.tgz > archi.tgz
 OR 
 scp user@10.0.3.1:/tmp/archi.tgz ## <-- a your local user and machine.
 tar xpzf archi.tgz
