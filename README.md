@@ -1,10 +1,8 @@
 # archi
 ### Purpose
-A personal set of scripts to fully automate the installation of Arch Linux as a complete Desktop System. 
+A personal set of scripts to fully automate the installation of Arch Linux as a complete Desktop System; currently only as a VM. 
 
 **Note:** This design is a format I am interested in setting up and testing. The script's config can be changed to your personal preferences **[change archi.conf file]** see optional.
-
-I am moving systems away from distro package managers (as much as I can), to be more nimble as an operator, in so creating clean modular deployments, and maintaining such systems with intelligent administrative values. This install is a modern Arch foundation and a flatpak-apps environment for the ongoing desktop experience.
 
 I have nothing to do with Arch Linux or flatpak for that matter, this is for my personal use.
 
@@ -27,7 +25,7 @@ From the Arch Linux booted ISO:
 curl -s -L https://github.com/bernie724/archi/raw/main/archi/archi.tgz > archi.tgz
 tar xzpf archi.tgz
 cd archi/; ./arch0base.sh 
-#That's it! This will have a final warning, and then start and complete the install without any further interaction
+#This will have a final warning, and then start and complete the install without any further interaction
 ```
 ##### Method #2
 Copy and unpack the archi.tgz (above) to a booted Arch Install ISO and run arch0base.sh  
@@ -35,7 +33,7 @@ Copy and unpack the archi.tgz (above) to a booted Arch Install ISO and run arch0
 scp username@10.0.0.1:~/archi/archi.tgz .
 tar xzpf archi.tgz
 cd archi/; ./arch0base.sh
-#That's it! This will have a final warning, and then start and complete the install without any further interaction
+#This will have a final warning, and then start and complete the install without any further interaction
 ```
 ![simplescp](https://user-images.githubusercontent.com/20193396/230524685-c2e340a2-4596-49de-85f3-539b1a61c481.png)
 #### Configuring the scripts (optional)
@@ -94,15 +92,6 @@ The install is **one command** with **NO** interaction:
 
 ![archithreerun](https://user-images.githubusercontent.com/20193396/230749166-5b3c624a-299d-45e7-8664-ab01cc5bf844.png)
 
-#### Conclusion
-
-With these scripts I can move away from all distro package managers on all Desktop (GUI) systems I create.   
-This script creates a clean, snappy (pun) Arch desktop that is manageable, safe and fun. 
-My basic desktop requirements are, a granite like stability at the core and futuristic application availability in the operator space.
-What ever happened to beryl.. (-:
-
-If you use, test or try these scripts '**Thank You**'. Any feedback, fixes, improvements, screenshots, whatnot would be nice. 
-
--BT [3/28/2023]
+If you use, test or try these scripts, thanks. Feedback, fixes, improvements, screenshots, whatnot would be nice. 
 
 *archi is inspired from a.r.c.h.i.(e) from the tabletop rpg game Rifts 'Artificial Robot Cerebellum Housing Intellect (Experiment)'*
