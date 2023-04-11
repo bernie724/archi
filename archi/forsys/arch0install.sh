@@ -37,7 +37,6 @@ echo -n "changing $auser password..."
 ##create package directory
 mkdir "$apkg"
 ##call functions for system gen
-aline
 if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
 iauto
 fi

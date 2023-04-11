@@ -50,7 +50,7 @@ fi
 }
 imods () {
 ##install kmods
-echo -n "Install kernel modules [$mlist]..."
+echo -n "Install modules..."
 if [ -s "$mlist" ]; then
 while read amod; do
 echo "$amod" > /etc/modules-load.d/"$amod".conf && echo -n "."
