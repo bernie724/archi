@@ -1,6 +1,6 @@
 #!/bin/bash
 ##B.Thompson
-##if you need aliens (aur) use this script, forget octipi or yay, just use this (-: or not
+##if you need aliens (aur) use this script
 aapp="$1"
 aurl="https://aur.archlinux.org/"
 apkg=/usr/local/packages
