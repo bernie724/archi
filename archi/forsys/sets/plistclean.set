@@ -8,6 +8,7 @@ inetutils
 ntp
 openssh
 wget
+tmux
 lighttpd
 btrfs-progs
 gvfs

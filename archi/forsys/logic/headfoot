@@ -2,17 +2,44 @@
 ##B.Thompson
 ##header and footer
 basehead () {
-aline
 echo "read: https://wiki.archlinux.org/title/installation_guide"
 echo "Goal: A linux [VM] desktop [$awmn]."
 }
+
+sleepspin () {
+stime=15
+sspin=0
+swheel='-\|/'
+sback=' '
+smax=$(( $stime * 10 ))
+while [ $sspin -le $smax ]
+do
+sspin=$(( $sspin + 1 ))
+if [ $sspin -le $smax ]; then
+siter=$(( (siter+1) %4 ))
+echo -ne "\b${swheel:$siter:1}"
+else
+echo -ne "\b$sback"
+fi
+sleep .10
+done
+}
+
+umountall () {
+umount "$rmnt/$bmnt" || umount -f "$rmnt/$bmnt" || umount -l "$rmnt/$bmnt"
+umount "$rmnt" || umount -f "$rmnt" || umount -l "$rmnt"
+swapoff "$rdev$spar"
+}
+
 basefoot () {
 if [ "$areboot" = "true" ]; then
 clear
 fi
-msg "${BPURPLE}$osn is done!${CLS}"
+msg "${BPURPLE}$osn is Finished!${CLS}"
+if [ "$warn" = "true" ]; then
 msg "Sys:${BOLD}[$osn] ${CLS}Host:${BOLD}[$ahost]${CLS} User:${BOLD}[$auser]${CLS} Pass:${BOLD}[$apass]${CLS}"
 aline
+fi
 msg "${BOLD}Things to do:${CLS}"
 echo "Use 'flatpak search <term>' to find more apps, or flats <term>"
 echo "Batch install flatpak apps using lists with flatiset.sh"
@@ -20,31 +47,16 @@ aline
 msg "${BOLD}Boot housekeeping:${CLS}"
 echo "Change your boot order OR remove the media OR hit [F12]"
 echo "OR select 'Boot existing OS' from the Arch ISO boot menu"
-umount "$rmnt/$bmnt" || umount -f "$rmnt/$bmnt" || umount -l "$rmnt/$bmnt"
-umount "$rmnt" || umount -f "$rmnt" || umount -l "$rmnt"
-swapoff "$rdev$spar"
 if [ "$areboot" = "true" ]; then
-x=0
 stime=15
 msgn "${BRED}Rebooting${CLS} in $stime seconds. ${GREEN}"
-spin='-\|/'
-max=$(( $stime * 10 ))
-pd=' '
-while [ $x -le $max ]
-do
-x=$(( $x + 1 ))
-if [ $x -le $max ]; then
-i=$(( (i+1) %4 ))
-echo -ne "\b${spin:$i:1}"
-else
-echo -ne "\b$pd"
-fi
-sleep .10
-done
+sleepspin
 reboot
 else
+if [ "$warn" = "true" ]; then
 aline
 msg "${BGREEN}reboot${CLS}"
+fi
 aline
 fi
 }

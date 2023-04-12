@@ -47,10 +47,8 @@ finboot
 aline
 ipacs
 if [ "$asplash" = "true" ]; then
-aline
 iplym
 fi
-aline
 idaemon
 ##install ssaver wallpaper
 awm=$((which startxfce4 > /dev/null 2>&1 && echo true) || echo false)

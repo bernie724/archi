@@ -5,11 +5,16 @@ source forsys/logic/color
 source forsys/logic/headfoot
 clear
 setfont "$afont"
-basehead
+if [ "$warn" = "true" ]; then
 aline
+basehead
 echo "Did you need to vim/nano archi.conf first.."
-msg "$0 will ${BRED}DESTROY${CLS} your entire [$rdev] disk!!!"
+msg "$0 will ${BRED}DESTROY${CLS} your entire [$rdev] disk"
 msgn "$0 is for ${YELLOW}testing ONLY!${CLS} Proceed [YES] ${RED}"; read destroysystem
+msgn "${CLS}"
+else
+destroysystem="YES"
+fi
 if [ "$destroysystem" = "YES" ]; then
 msgn ${CLS}
 aline
@@ -98,9 +103,10 @@ msgn "${BOLD}$0 ${CLS}Finished..."
 arch-chroot "$rmnt" "$idir"/arch0install.sh
 ##exit chroot
 aline
+umountall
 basefoot
 else
 aline
-echo "you're on your own..."
+msg "${CLS}you're on your own..."
 exit
 fi
