@@ -9,6 +9,7 @@ ntp
 openssh
 wget
 tmux
+gnu-netcat
 lighttpd
 btrfs-progs
 gvfs
@@ -46,7 +47,5 @@ cups-pdf
 cups-filters
 system-config-printer
 kitty
-vivaldi
-vivaldi-ffmpeg-codecs
 archlinux-wallpaper
 breeze-icons
