@@ -1,0 +1,29 @@
+[Default Applications]
+application/pdf=org.kde.okular.desktop
+text/html=com.google.Chrome.desktop
+application/xhtml+xml=com.google.Chrome.desktop
+text/plain=org.gnome.TextEditor.desktop
+x-scheme-handler/http=xfce4-web-browser.desktop
+x-scheme-handler/https=xfce4-web-browser.desktop
+image/png=org.gnome.Shotwell.Viewer.desktop
+x-scheme-handler/mailto=xfce4-mail-reader.desktop
+image/jpeg=org.gnome.Shotwell.Viewer.desktop
+application/vnd.oasis.opendocument.text=org.libreoffice.LibreOffice.writer.desktop
+application/vnd.oasis.opendocument.graphics=org.libreoffice.LibreOffice.draw.desktop
+application/vnd.oasis.opendocument.spreadsheet=org.libreoffice.LibreOffice.draw.desktop
+application/vnd.oasis.opendocument.presentation=org.libreoffice.LibreOffice.impress.desktop
+
+[Added Associations]
+application/pdf=org.kde.okular.desktop;com.google.Chrome.desktop;
+text/html=com.google.Chrome.desktop;
+application/xhtml+xml=com.google.Chrome.desktop;
+text/plain=org.gnome.TextEditor.desktop;
+x-scheme-handler/http=xfce4-web-browser.desktop;
+x-scheme-handler/https=xfce4-web-browser.desktop;
+image/png=org.gnome.Shotwell.Viewer.desktop;
+x-scheme-handler/mailto=xfce4-mail-reader.desktop;
+image/jpeg=org.gnome.Shotwell.Viewer.desktop;
+application/vnd.oasis.opendocument.text=org.libreoffice.LibreOffice.writer.desktop;
+application/vnd.oasis.opendocument.graphics=org.libreoffice.LibreOffice.draw.desktop;
+application/vnd.oasis.opendocument.spreadsheet=org.libreoffice.LibreOffice.draw.desktop;
+application/vnd.oasis.opendocument.presentation=org.libreoffice.LibreOffice.impress.desktop;
