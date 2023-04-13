@@ -25,15 +25,18 @@ From the Arch Linux booted ISO. ISO doesn't have git:
 curl -s -L https://github.com/bernie724/archi/raw/main/archi/archi.tgz > archi.tgz
 tar xzpf archi.tgz
 cd archi/; ./arch0base.sh 
-#This will have a final warning, and then start and complete the install without any further interaction
+#This will have a final warning, and then start and complete the install
 ```
 ##### Method #2
 Copy and unpack the archi.tgz (above) to a booted Arch Install ISO and run arch0base.sh  
 ```sh
-scp username@10.0.0.1:~/archi/archi.tgz .
+#from a local host
+git clone https://github.com/bernie724/archi # @ ~/ on 10.0.0.1
+#from the booted iso
+scp username@10.0.0.1:~/archi/archi/archi.tgz .
 tar xzpf archi.tgz
 cd archi/; ./arch0base.sh
-#This will have a final warning, and then start and complete the install without any further interaction
+#This will have a final warning, and then start and complete the install
 ```
 ![simplescp](https://user-images.githubusercontent.com/20193396/230524685-c2e340a2-4596-49de-85f3-539b1a61c481.png)
 #### Configuring the scripts (optional)
