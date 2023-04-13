@@ -32,20 +32,22 @@ echo -n "changing root password..."
 ((echo $apass; echo $apass) | passwd > /dev/null 2>&1) && echo "..okay."
 ##add a user
 useradd -m "$auser"
-echo -n "changing $auser password..."
+echo -n "changing [$auser] password..."
 ((echo $apass; echo $apass) | passwd $auser > /dev/null 2>&1) && echo "..okay."
 ##create package directory
-mkdir "$apkg"
+mkdir -p "$apkg"
 ##call functions for system gen
 if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
 iauto
 fi
 imods
+aline
 prepboot
 iboot
 finboot
 aline
 ipacs
+aline
 if [ "$asplash" = "true" ]; then
 iplym
 fi
@@ -63,12 +65,14 @@ else
 rm "$idir/$aconf"
 fi
 ##regenerate sys/user/linux
-aline
-regen
 if [ "$fpon" = "true" ]; then
 aline
 iflats
+if [ "$fpofficeon" = "true" ]; then
+ioffice
+fi
 fi
 aline
+regen
 reman
 chmod -x $0

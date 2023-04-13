@@ -58,3 +58,10 @@ done < "$mlist"
 fi
 echo ".okay."
 }
+
+ioffice () {
+aoffice=org.libreoffice.LibreOffice
+echo -n "Installing office suite [$aoffice]..."
+cp /etc/skel/.config/mimeapps.list.aoffice /etc/skel/.config/mimeapps.list && echo -n ".."
+((flatpak install --noninteractive -y "$aoffice" > /dev/null 2>&1) && echo ".okay.") || (flatpak install --noninteractive -y --or-update "$aoffice" > /dev/null 2>&1 && echo ".retry okay.") || echo "...retry failed!"
+}

@@ -8,7 +8,7 @@ setfont "$afont"
 if [ "$warn" = "true" ]; then
 aline
 basehead
-echo "Did you need to vim/nano archi.conf first.."
+echo "Did you need to vim/nano archi.conf first..."
 msg "$0 will ${BRED}DESTROY${CLS} your entire [$rdev] disk"
 msgn "$0 is for ${YELLOW}testing ONLY!${CLS} Proceed [YES] ${RED}"; read destroysystem
 msgn "${CLS}"
@@ -21,51 +21,91 @@ aline
 msg "(archi.conf) Sys:${BOLD}[$osn] ${CLS}Host:${BOLD}[$ahost]${CLS} User:${BOLD}[$auser]${CLS} Pass:${BOLD}[$apass]${CLS}"
 msg "${CYAN}When complete make sure to change your boot order!${CLS}"
 aline
-##complete wipe/format disk 1 [rdev]
+##partition disk [rdev]
 if [ "$apdisk" = "true" ]; then
-echo -n "Prepairing Disk [$rdev]"
-chmod +x prepdisk.sh
-./prepdisk.sh > /dev/null 2>&1
-chmod -x prepdisk.sh
-echo "...okay."
+echo -n "Prepairing Disk [$rdev].."
+if [ "$apext" = "false" ]; then
+swplus=$((bosize + swsize))
+if [ $rosize -eq -1 ]; then
+rosize=-2048s
+else
+rosize="$rosize""GiB"
 fi
-##format first disk partitions
-echo -n "Formating [$rdev] partitions & swap..."
+parted --script -a optimal -- "$rdev" mklabel gpt mkpart primary 1MiB "$bosize"GiB mkpart primary "$bosize"GiB "$swplus"GiB mkpart primary "$swplus"GiB "$rosize" 
+else
+##extended disk parts
+hmnt=/home
+fpmnt=/var/lib/flatpak
+swplus=$((bosize + swsize))
+hoplus=$((swplus + hosize))
+fpplus=$((hoplus + fpsize))
+if [ $rosize -eq -1 ]; then
+rosize=-2048s
+else
+rosize="$rosize""GiB"
+fi
+parted --script -a optimal -- "$rdev" mklabel gpt mkpart primary 1MiB "$bosize"GiB mkpart primary "$bosize"GiB "$swplus"GiB mkpart primary "$swplus"GiB "$hoplus"GiB mkpart primary "$hoplus"GiB "$fpplus"GiB mkpart primary "$fpplus"GiB "$rosize"  
+fi
+echo ".okay."
+fi
+
+echo -n "Formating partitions & swap [$rdev].."
+##format disk partitions
 if [ "$afs" = "ext4" -o "$afs" = "btrfs" ]; then
+if [ "$apext" = "false" ]; then
 if [ "$afs" = "btrfs" ]; then
 mkfs."$afs" -f -q "$rdev$rpar" > /dev/null 2>&1
+mount "$rdev$rpar" "$rmnt"
 fi
 if [ "$afs" = "ext4" ]; then
 mkfs."$afs" -F -q "$rdev$rpar" > /dev/null 2>&1
+mount "$rdev$rpar" "$rmnt"
+fi
+else
+if [ "$afs" = "btrfs" ]; then
+mkfs."$afs" -f -q "$rdev$rpar" > /dev/null 2>&1
+mkfs."$afs" -f -q "$rdev$hpar" > /dev/null 2>&1
+mkfs."$afs" -f -q "$rdev$fppar" > /dev/null 2>&1
+mount "$rdev$rpar" "$rmnt"
+fi
+if [ "$afs" = "ext4" ]; then
+mkfs."$afs" -F -q "$rdev$rpar" > /dev/null 2>&1
+mkfs."$afs" -F -q "$rdev$hpar" > /dev/null 2>&1
+mkfs."$afs" -F -q "$rdev$fppar" > /dev/null 2>&1
+mount "$rdev$rpar" "$rmnt"
+fi
 fi
 else
 echo "afs= must be ext4 or btrfs in $aconf"
 exit 1
 fi
-mount "$rdev$rpar" "$rmnt"
+
 ##format boot partition
 mkfs.fat -F 32 "$rdev$bpar" > /dev/null 2>&1
 mount --mkdir "$rdev$bpar" "$rmnt/$bmnt" #/dev/sda1 /mnt/boot
-##second disk
-if [ "$bpdisk" = "true" ]; then
-echo -n "Prepairing Disk [$bdev]"
-mkfs.ext4 -q -F "$bdev" > /dev/null 2>&1
-mount --mkdir "$bdev" "$rmnt"/var/lib/flatpak && echo "..okay."
-fi
 ##swap
 mkswap "$rdev$spar" > /dev/null 2>&1
 swapon "$rdev$spar"
-echo "...okay."
+echo ".okay."
 ##clock
 aline
 timedatectl | grep Universal | awk '{ print $3,$4,$5,$6 }'
 ##linux base
 msg "${BOLD}$0 will take a few minutes, brew some coffee..${CLS}"
-echo -n "Installing linux [$rdev$rpar]..."
+echo -n "Installing linux [$rdev$rpar].."
 ((pacstrap -K "$rmnt" base linux linux-firmware > /dev/null 2>&1) && echo ".okay.") || (msg "${RED}failed! this can't happen reboot the iso!${CLS}"; exit 1)
-genfstab -U "$rmnt" >> "$rmnt/etc/fstab"
+if [ "$apext" = "true" ]; then
+echo -n "Mounting [$hmnt] & [$fpmnt].."
+mount "$rdev$hpar" "$rmnt/$hmnt" && echo -n "."
+mount --mkdir "$rdev$fppar" "$rmnt/$fpmnt" && echo -n "."
+echo ".okay."
+fi
+echo -n "configuring fstab.."
+genfstab -U "$rmnt" >> "$rmnt/etc/fstab" && echo -n "."
+echo ".okay."
+
 ##customize local settings
-echo -n "Configure $osn..."
+echo -n "Configure [$osn].."
 mkdir -p "$rmnt/$idir" && echo -n "."
 cp "$aconf" "$rmnt/$idir/" && echo -n "."
 mv "$rmnt/etc/skel" "$rmnt/etc/skel.arch" && echo -n "."
@@ -80,8 +120,6 @@ mv "$rmnt/etc/mkinitcpio.conf" "$rmnt/etc/mkinitcpio.conf.arch"
 mv "$atool/mkinitcpio.conf.nosplash" "$rmnt/etc/mkinitcpio.conf"
 rm "$atool/mkinitcpio.conf.splash"
 fi
-##arch-chroot prep
-#cp "$atool/archi.jpg" "$rmt/$bmnt"
 mv "$atool/litexfce.sh" "$rmnt/$aloc/bin/"
 mv "$atool/darkxfce.sh" "$rmnt/$aloc/bin/"
 mv "$atool/rmpacset.sh" "$rmnt/$aloc/bin/"

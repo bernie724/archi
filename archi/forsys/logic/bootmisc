@@ -13,17 +13,17 @@ fi
 }
 iboot () {
 ##Build/install limine
-echo -n "Cloning $bapp [bootloader]..."
+echo -n "Cloning bootloader [$bapp]..."
 cd "$apkg"
 (git clone https://aur.archlinux.org/$bapp.git > /dev/null 2>&1) && echo ".okay."
-echo -n "Build $bapp..."
+echo -n "Build [$bapp]..."
 cd "$apkg/$bapp"
 chown -R "$auser" "$apkg/$bapp"
 (su $auser -c "makepkg -si --noconfirm" > /dev/null 2>&1) && echo ".okay."
 }
 finboot () {
 ##config the boot loader limine #as noted many times grub hates me
-echo -n "Install $bapp..."
+echo -n "Install [$bapp]..."
 cp /usr/share/limine/limine.sys "/$bmnt"
 limine-deploy "$rdev" 2> /dev/null
 ruuid=$(blkid -s UUID -o value "$rdev$rpar")
@@ -64,7 +64,7 @@ echo ".okay."
 }
 iplym () {
 #plymouth
-echo -n "Configuring splash [plymouth]..."
+echo -n "Configuring startup splashscreen..."
 mv /etc/plymouth/plymouthd.conf /etc/plymouth/plymouthd.conf.arch
 echo "Theme=$astheme" >> /etc/skel/plymouthd.conf
 mv /etc/skel/plymouthd.conf /etc/plymouth/

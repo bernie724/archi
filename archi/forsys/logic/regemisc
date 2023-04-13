@@ -27,7 +27,7 @@ else
 cp /etc/skel/.profile .
 fi' > ~/.profile
 else
-echo -n "Regenerating $auser..."
+echo -n "Regenerating user [$auser]..."
 useradd -m "$auser" && echo -n "."
 ((echo $apass; echo $apass) | passwd $auser > /dev/null 2>&1) && echo -n "."
 chown -R "$auser" "$aloc"
@@ -43,10 +43,10 @@ echo ".okay."
 fi
 }
 icrypt () {
-echo -n "Cloning $capp [crypt tool]..."
+echo -n "Cloning crypt tool [$capp]..."
 cd "$apkg"
 (git clone https://aur.archlinux.org/$capp.git > /dev/null 2>&1) && echo ".okay."
-echo -n "build/install $capp..."
+echo -n "build/install [$capp]..."
 cd "$apkg/$capp"
 chown -R "$auser" "$apkg/$capp"
 (su $auser -c "makepkg -si --noconfirm" > /dev/null 2>&1) && echo ".okay."
@@ -63,5 +63,5 @@ reman () {
 ##gen/update man pages
 echo -n "Updating man pages..."
 mandb -q 2> /tmp/man$$.err
-echo "...Done!"
+echo ".okay."
 }

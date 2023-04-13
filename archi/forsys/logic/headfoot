@@ -26,6 +26,11 @@ done
 }
 
 umountall () {
+if [ "$apext" = "true" ]; then
+umount "$rmnt/$hmnt" || umount -f "$rmnt/$hmnt" || umount -l "$rmnt/$hmnt"
+umount "$rmnt/$fpmnt" || umount -f "$rmnt/$fpmnt" || umount -l "$rmnt/$fpmnt"
+fi
+
 umount "$rmnt/$bmnt" || umount -f "$rmnt/$bmnt" || umount -l "$rmnt/$bmnt"
 umount "$rmnt" || umount -f "$rmnt" || umount -l "$rmnt"
 swapoff "$rdev$spar"
