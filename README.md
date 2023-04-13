@@ -38,7 +38,6 @@ tar xzpf archi.tgz
 cd archi/; ./arch0base.sh
 #This will have a final warning, and then start and complete the install
 ```
-![simplescp](https://user-images.githubusercontent.com/20193396/230524685-c2e340a2-4596-49de-85f3-539b1a61c481.png)
 #### Configuring the scripts (optional)
 I would review and leave the settings for the first run, these scripts dont have a lot of conditional checks yet, the config file is archi/archi.conf and the install sets are located @ archi/forsys/sets
 ```sh
@@ -63,7 +62,7 @@ After configuring (or not the target is a virtual env) the archi.conf (as alread
 ![archiOpen](https://user-images.githubusercontent.com/20193396/229312258-fdd0f36c-873a-4eca-922b-9f1a25629af1.png)
 ![archiMinimized](https://user-images.githubusercontent.com/20193396/229314436-9343d304-1261-4e01-8cd6-261193597ff4.png)
 
-###### still need aliens (aur), There is a script for that.
+###### aur installer script.
 ![aliens](https://user-images.githubusercontent.com/20193396/230786626-befd98c8-e870-4ea8-9a12-c1b4bf2a28a6.png)
 
 
