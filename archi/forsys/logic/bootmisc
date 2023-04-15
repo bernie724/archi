@@ -1,8 +1,39 @@
 #!/bin/bash
 ##B.Thompson
-##boot related tasks
+
+prephost (){
+##prep host 
+cd "$idir"
+mv "/etc/skel" "/etc/skel.arch" #&& echo -n "."
+mv "skel" "/etc/"
+##check spash screen true
+if [ "$asplash" = "true" ]; then
+mv "/etc/mkinitcpio.conf" "/etc/mkinitcpio.conf.arch"
+mv "$atool/mkinitcpio.conf.splash" "/etc/mkinitcpio.conf"
+rm "$atool/mkinitcpio.conf.nosplash"
+else
+mv "/etc/mkinitcpio.conf" "/etc/mkinitcpio.conf.arch"
+mv "$atool/mkinitcpio.conf.nosplash" "/etc/mkinitcpio.conf"
+rm "$atool/mkinitcpio.conf.splash"
+fi
+##move host scripts
+mv "$atool/litexfce.sh" "$aloc/bin/"
+mv "$atool/darkxfce.sh" "$aloc/bin/"
+mv "$atool/rmpacset.sh" "$aloc/bin/"
+mv "$atool/flatiset.sh" "$aloc/bin/"
+mv "$atool/alien.sh" "$aloc/bin/"
+##profile for autologin
+#if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
+#mv "$atool/profile.auto" "$askel/".profile
+#rm "$atool/profile.noauto"
+#else
+#mv "$atool/profile.noauto" "$askel/".profile
+#rm "$atool/profile.auto"
+#fi
+}
+
 prepboot (){
-##boot loader prep
+##bootloader prep
 echo -n "Installing base..."
 (pacman -Sy --needed --color always --noconfirm --noprogressbar base-devel git sudo > /dev/null 2>&1) && echo "..okay."
 ##change /etc/sudoers to include $USERNAME i.e. you
@@ -49,21 +80,23 @@ cp "$idir/$alim" "/$bmnt"
 echo ".okay."
 }
 iscreen () {
-echo -n "Updating screensaver..."
+echo -n "Updating system backgrounds..."
 #create screensaver
 bi=(snow.jpg sunset.jpg landscape.jpg mountain.jpg reflected.jpg svalbard.jpg)
-if [ ! -d "$bdir" ]; then
 mkdir "$bdir"
-fi
 if [ -d "$abdir" ]; then
 cd "$abdir"
 cp ${bi[@]} "$bdir"
+wpp=$(( $RANDOM % 7 + 1 - 1 ))
+cp "${bi[2]}" "/$bmnt/$awall"
 cd "$idir"
 fi
 echo ".okay."
 }
 iplym () {
 #plymouth
+echo -n "Installing spashscreen [plymouth]..."
+((pacman -Sy --noconfirm --noprogressbar "plymouth" > /dev/null 2>&1) && echo ".okay.") || echo ".failed!"
 echo -n "Configuring startup splashscreen..."
 mv /etc/plymouth/plymouthd.conf /etc/plymouth/plymouthd.conf.arch
 echo "Theme=$astheme" >> /etc/skel/plymouthd.conf

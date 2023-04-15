@@ -1,6 +1,51 @@
 #!/bin/bash
 ##B.Thompson
 ##package tasks
+iwin () {
+#check for a wm
+cd $idir
+cat "$blist" > "$plist"
+if [ "$awin" != "none" ]; then
+echo "xorg" >> "$plist"
+echo "xorg-xinit" >> "$plist"
+touch "$askel"/.Xauthority
+fi
+#setup i3
+if [ "$awin" = "i3" ]; then
+echo "i3" >> "$plist"
+echo "dmenu" >> "$plist"
+echo "feh" >> "$plist"
+cat "$xlist" >> "$plist"
+echo "feh --bg-max ~/.config/bgi3.png" > "$askel/.xinitrc"
+echo "exec i3" >> "$askel/.xinitrc"
+if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
+echo '(startx 2> /dev/null) && exit' > "$askel/.profile"
+fi
+fi
+#setup openbox 
+if [ "$awin" = "openbox" ]; then
+echo "openbox" >> "$plist"
+echo "openconf" >> "$plist"
+echo "menumaker" >> "$plist"
+echo "feh" >> "$plist"
+cat "$xlist" >> "$plist"
+echo "exec openbox-session" > "$askel/.xinitrc"
+if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
+echo '(startx 2> /dev/null) && exit' > "$askel/.profile"
+fi
+fi
+#setup xfce4
+if [ "$awin" = "xfce4" ]; then
+echo "xfce4" >> "$plist"
+echo "xfce4-goodies" >> "$plist"
+cat "$xlist" >> "$plist"
+echo "exec xfce4-session" > "$askel/.xinitrc"
+if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
+echo '(startxfce4 2> /dev/null) && exit' > "$askel/.profile"
+fi
+fi
+}
+
 ipacs () {
 ##packages pacman
 cd $idir

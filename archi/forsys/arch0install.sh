@@ -42,10 +42,12 @@ iauto
 fi
 imods
 aline
+prephost
 prepboot
 iboot
 finboot
 aline
+iwin
 ipacs
 aline
 if [ "$asplash" = "true" ]; then
@@ -53,10 +55,7 @@ iplym
 fi
 idaemon
 ##install ssaver wallpaper
-awm=$((which startxfce4 > /dev/null 2>&1 && echo true) || echo false)
-if [ "$awm" = "true" ]; then
 iscreen
-fi
 ##acrypt, lock up the conf file on the live system
 if [ "$acrypt" = "true" ]; then
 aline
@@ -75,4 +74,6 @@ fi
 aline
 regen
 reman
+chown -R "$auser" "$ahome"
+chown -R "$auser" "$aloc"
 chmod -x $0
