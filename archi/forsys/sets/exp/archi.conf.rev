@@ -1,0 +1,103 @@
+#!/bin/bash
+##B.Thompson 
+##Config for archi install
+warn=true
+osn="archi" #script name
+hid=$(hostid | cut -b5-8)
+ahost="$osn-$hid" #hostname
+auser="$osn" #username
+apass="$osn" #passwords
+alang="en_US.UTF-8"
+acode="UTF-8"
+akeym="us"
+ltime="America/Los_Angeles"
+afont=ter-712n #console font name
+idir=/usr/local/archi ##Do not change, needed to cross over to chroot env
+aconf=archi.conf ##Do not change, needed to cross over to chroot env
+bapp=limine ##Do not change, only bootloader option for now
+alim=limine.cfg
+##disk
+apdisk=true #false create your own disk; expects boot/swap/root partitions
+afs=btrfs
+rdev=/dev/sda #main disk 
+bpar=1 #boot
+spar=2 #swap
+rpar=3 #root
+bosize=1 #boot part size in GiB
+swsize=1 #swap size GiB
+rosize=-1 #root size GiB -1=rest of disk
+rmnt=/mnt #root mnt
+bmnt=boot #boot mnt name
+apext=false #true create apps and home partitions
+ if [ "$apext" = "true" ]; then
+ fpsize=15 #apps in GiB (/var/lib/flatpak)
+ hosize=2 #home in GiB
+ rosize=-1 #root size GiB -1=rest of disk
+ hpar=3 #home
+ fppar=4 #apps (/var/lib/flatpak)
+ rpar=5 #move root to last
+ hmnt=home #home mnt name
+ fpmnt=var/lib/flatpak #apps mnt name 
+ fi
+##which windows env 
+awin=i3 #openbox i3 none
+##packages
+fpon=false #false flatpak apps off
+fpofficeon=false #install a flatpak office suite
+fverbose=false
+blist=sets/blist.set #base pacman list
+xlist=sets/xlist.set #x extra list
+flist=sets/flist.set #flatpak batch list
+plist=sets/plist.set #complete pacman batch list
+pverbose=false
+mlist=sets/mlist.set #module list
+areboot=flase #true, reboot after install 
+ stime=15 #pause in seconds before areboot
+aauto=false # autologin tty1
+asplash=true # splash screen
+astheme=solar #has to be one of the plymouth default themes
+askel=/etc/skel #system skeleton dir
+atool=tools #base tool locale
+awall=archi.jpg  #limine boot wallpaper
+acrypt=false #false and the archi.conf will be removed instead of encrypted
+capp=ccrypt #file crypt app
+sshkey=false #true, copy .ssh from an existing system [sshhost]
+ sshhost="10.0.3.1"
+asudo=true #false, sudo will ask for a password whenever respawn
+aloc=/usr/local #local host admin area
+ahome="/home/$auser"
+osb="$osn (\t)"
+apkg="$aloc/packages"
+bdir=/usr/local/backgrounds #backgrounds
+abdir=/usr/share/backgrounds/archlinux
+bbdir=/usr/share/backgrounds/xfce
+awmn=xfce4 #only xfce4 
+
+##break line
+aline () {
+ctype="~"
+clen=80
+until [ $clen -le 0 ]
+do
+echo -n "$ctype"
+((clen--))
+done
+echo
+}
+
+##EXPERIMENTAL IDEAS/AREA sets/exp area
+##todo projects to write ##experimental only [sometimes working]##
+##post boot, crypt user, optional post installs, requires interaction 
+pbon=false #interactive script after reboot, encrypt home luks with homectl (not possiable here no pid 1)
+ pbuid=1000
+ pbds=2G
+##theme idea
+#atheme="xfce4.tgz"
+#adisplay="MonitorVirtual-1"
+#acomment="ability to comment in sets with regex ^#"
+#partsize="change boot slice and swap and root in conf"
+#slist="$idir/sets/slist.set"
+##add windows manager (wm) option and/or dm
+
+##revision
+arev=r1681528022

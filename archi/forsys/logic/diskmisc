@@ -1,0 +1,102 @@
+#!/bin/bash
+##B.Thompson
+
+diskpart () {
+##partition disk [rdev]
+if [ "$apdisk" = "true" ]; then
+echo -n "Prepairing Disk [$rdev].."
+if [ "$apext" = "false" ]; then
+swplus=$((bosize + swsize))
+if [ $rosize -eq -1 ]; then
+rosize=-2048s
+else
+rosize="$rosize""GiB"
+fi
+parted --script -a optimal -- "$rdev" mklabel gpt mkpart primary 1MiB "$bosize"GiB mkpart primary "$bosize"GiB "$swplus"GiB mkpart primary "$swplus"GiB "$rosize"
+else
+##extended disk parts
+hmnt=/home
+fpmnt=/var/lib/flatpak
+swplus=$((bosize + swsize))
+hoplus=$((swplus + hosize))
+fpplus=$((hoplus + fpsize))
+if [ $rosize -eq -1 ]; then
+rosize=-2048s
+else
+rosize="$rosize""GiB"
+fi
+parted --script -a optimal -- "$rdev" mklabel gpt mkpart primary 1MiB "$bosize"GiB mkpart primary "$bosize"GiB "$swplus"GiB mkpart primary "$swplus"GiB "$hoplus"GiB mkpart primary "$hoplus"GiB "$fpplus"GiB mkpart primary "$fpplus"GiB "$rosize"
+fi
+echo ".okay."
+fi
+}
+
+formatroot () {
+##format disk partitions
+echo -n "Formating system partitions [$rdev].."
+if [ "$afs" = "ext4" -o "$afs" = "btrfs" ]; then
+if [ "$apext" = "false" ]; then
+if [ "$afs" = "btrfs" ]; then
+mkfs."$afs" -f -q "$rdev$rpar" > /dev/null 2>&1
+mount "$rdev$rpar" "$rmnt"
+fi
+if [ "$afs" = "ext4" ]; then
+mkfs."$afs" -F -q "$rdev$rpar" > /dev/null 2>&1
+mount "$rdev$rpar" "$rmnt"
+fi
+else
+if [ "$afs" = "btrfs" ]; then
+mkfs."$afs" -f -q "$rdev$rpar" > /dev/null 2>&1
+mkfs."$afs" -f -q "$rdev$hpar" > /dev/null 2>&1
+mkfs."$afs" -f -q "$rdev$fppar" > /dev/null 2>&1
+mount "$rdev$rpar" "$rmnt"
+fi
+if [ "$afs" = "ext4" ]; then
+mkfs."$afs" -F -q "$rdev$rpar" > /dev/null 2>&1
+mkfs."$afs" -F -q "$rdev$hpar" > /dev/null 2>&1
+mkfs."$afs" -F -q "$rdev$fppar" > /dev/null 2>&1
+mount "$rdev$rpar" "$rmnt"
+fi
+fi
+echo ".okay."
+else
+echo "afs= must be ext4 or btrfs in $aconf"
+exit 1
+fi
+}
+
+formatboot () {
+##format boot partition
+echo -n "Formating boot partition [$rdev$bpar].."
+mkfs.fat -F 32 "$rdev$bpar" > /dev/null 2>&1
+mount --mkdir "$rdev$bpar" "$rmnt/$bmnt" #/dev/sda1 /mnt/boot
+echo ".okay."
+}
+
+formatswap () {
+##swap
+echo -n "Starting swap  partition [$rdev$spar].."
+mkswap "$rdev$spar" > /dev/null 2>&1
+swapon "$rdev$spar"
+echo ".okay."
+}
+
+ilinux () {
+##linux base
+msg "${BOLD}$0 will take a few minutes, brew some coffee..${CLS}"
+timedatectl | grep Universal | awk '{ print $3,$4,$5,$6 }'
+aline
+echo -n "Installing linux [$rdev$rpar].."
+((pacstrap -K "$rmnt" base linux linux-firmware > /dev/null 2>&1) && echo ".okay.") || (msg "${RED}failed! this can't happen reboot the iso!${CLS}"; exit 1)
+if [ "$apext" = "true" ]; then
+echo -n "Mounting [$hmnt] & [$fpmnt].."
+mount "$rdev$hpar" "$rmnt/$hmnt" && echo -n "."
+mount --mkdir "$rdev$fppar" "$rmnt/$fpmnt" && echo -n "."
+echo ".okay."
+fi
+echo -n "Configuring static filesystem info.."
+genfstab -U "$rmnt" >> "$rmnt/etc/fstab" && echo -n "."
+echo ".okay."
+}
+
+
