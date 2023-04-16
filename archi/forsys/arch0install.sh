@@ -74,6 +74,8 @@ fi
 aline
 regen
 reman
+if [ -d "$ahome" ]; then
 chown -R "$auser" "$ahome"
 chown -R "$auser" "$aloc"
+fi
 chmod -x $0

@@ -23,6 +23,7 @@ mv "$atool/rmpacset.sh" "$aloc/bin/"
 mv "$atool/flatiset.sh" "$aloc/bin/"
 mv "$atool/frun.sh" "$aloc/bin/"
 mv "$atool/alien.sh" "$aloc/bin/"
+mv "$atool/dudir.sh" "$aloc/bin/"
 ##profile for autologin
 #if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
 #mv "$atool/profile.auto" "$askel/".profile
@@ -130,6 +131,7 @@ echo -n "Enable daemons.."
 (systemctl enable ntpd > /dev/null 2>&1) && echo -n ".."
 (systemctl enable lighttpd > /dev/null 2>&1) && echo -n ".."
 (systemctl enable cups > /dev/null 2>&1) && echo -n ".."
+(systemctl enable cronie > /dev/null 2>&1) && echo -n ".."
 (systemctl enable avahi-daemon > /dev/null 2>&1) && echo -n ".."
 (systemctl enable systemd-homed > /dev/null 2>&1) && echo -n ".."
 (systemctl enable paccache.timer > /dev/null 2>&1) && echo -n ".."

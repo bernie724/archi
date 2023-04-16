@@ -25,7 +25,7 @@ fi
 #setup openbox 
 if [ "$awin" = "openbox" ]; then
 echo "openbox" >> "$plist"
-echo "openconf" >> "$plist"
+echo "obconf" >> "$plist"
 echo "menumaker" >> "$plist"
 echo "feh" >> "$plist"
 cat "$xlist" >> "$plist"

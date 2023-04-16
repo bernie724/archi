@@ -49,7 +49,6 @@ if [ "$guis" = "N" -o "$guis" = "n" ]; then
 myt=$(tty)
 echo "pid: $$ tty: $myt"
 else
-echo "Use: litexfce.sh or darkxfce.sh to switch themes!"
 exec startx 2> /dev/null
 exit
 fi

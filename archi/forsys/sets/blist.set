@@ -7,6 +7,7 @@ net-tools
 inetutils
 ntp
 openssh
+cron
 wget
 tmux
 gnu-netcat
