@@ -2,8 +2,20 @@
 
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
-<menu id="terminals" label="Terminials">
-  <item label="Terminator">
+<menu id="root-menu" label="Openbox 3">
+  <menu id="terminals"/>
+  <separator label="System" />
+  <menu id="system-menu"/>
+ <item label="Explorer">
+    <action name="Execute">
+      <command>thunar</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <separator />
+  <item label="Term">
     <action name="Execute">
       <command>terminator</command>
       <startupnotify>
@@ -11,7 +23,7 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Kitty">
+  <item label="Term Kitty">
     <action name="Execute">
       <command>kitty</command>
       <startupnotify>
@@ -19,15 +31,63 @@
       </startupnotify>
     </action>
   </item>
-</menu>
-
-<menu id="root-menu" label="Openbox 3">
-  <separator label="Applications" />
-  <menu id="terminals"/>
-  <separator label="System" />
-  <menu id="system-menu"/>
+ <separator />
+  <item label="Web">
+    <action name="Execute">
+      <command>frun.sh Chrome</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Writer">
+    <action name="Execute">
+      <command>frun.sh AbiWord</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+ <item label="Markdown">
+    <action name="Execute">
+      <command>frun.sh CuteMarkEd</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
   <separator />
-  <item label="Openbox Configuration">
+ <item label="Books">
+    <action name="Execute">
+      <command>frun.sh Foliate</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Radio">
+    <action name="Execute">
+      <command>frun.sh Shortwave</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Chess">
+    <action name="Execute">
+      <command>frun.sh knights</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <separator />
+
+
+
+
+
+  <item label="Configuration">
     <action name="Execute">
       <command>obconf</command>
       <startupnotify>

@@ -10,6 +10,9 @@ ttf-font-awesome
 cups-pdf
 cups-filters
 system-config-printer
+xterm
 kitty
 terminator
+noto-fonts
+thunar
 breeze-icons
