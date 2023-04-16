@@ -21,6 +21,7 @@ mv "$atool/litexfce.sh" "$aloc/bin/"
 mv "$atool/darkxfce.sh" "$aloc/bin/"
 mv "$atool/rmpacset.sh" "$aloc/bin/"
 mv "$atool/flatiset.sh" "$aloc/bin/"
+mv "$atool/frun.sh" "$aloc/bin/"
 mv "$atool/alien.sh" "$aloc/bin/"
 ##profile for autologin
 #if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
