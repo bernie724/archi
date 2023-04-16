@@ -3,7 +3,7 @@
 ##header and footer
 basehead () {
 echo "read: https://wiki.archlinux.org/title/installation_guide"
-echo "Goal: A linux [VM] desktop [$awmn]."
+echo "Goal: A linux [VM] desktop [$awin]."
 }
 
 sleepspin () {
