@@ -27,9 +27,11 @@ if [ "$awin" = "openbox" ]; then
 echo "openbox" >> "$plist"
 echo "obconf" >> "$plist"
 echo "menumaker" >> "$plist"
+echo "tint2" >> "$plist"
 echo "feh" >> "$plist"
 cat "$xlist" >> "$plist"
-echo "exec openbox-session" > "$askel/.xinitrc"
+echo "tint2 &" > "$askel/.xinitrc"
+echo "exec openbox-session" >> "$askel/.xinitrc"
 if [ "$aauto" = "true" -a "$pbon" = "false" ]; then
 echo '(startx 2> /dev/null) && exit' > "$askel/.profile"
 fi
