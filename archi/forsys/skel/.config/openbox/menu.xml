@@ -56,6 +56,14 @@
       </startupnotify>
     </action>
   </item>
+  <item label="Office">
+    <action name="Execute">
+      <command>frun.sh LibreOffice</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
   <separator />
  <item label="Books">
     <action name="Execute">
